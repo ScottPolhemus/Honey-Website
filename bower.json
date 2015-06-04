@@ -1,0 +1,11 @@
+{
+  "name": "honey",
+  "version": "0.0.0",
+  "authors": [
+    "Scott Polhemus <scott@polhem.us>"
+  ],
+  "dependencies": {
+    "velocity": "~1.2.2",
+    "jquery-mousewheel": "~3.1.12"
+  }
+}

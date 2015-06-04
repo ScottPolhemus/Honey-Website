@@ -1,0 +1,24 @@
+.profile-slider-icons,
+.dietitian-slider-photos {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+  .slider-item {
+    margin: 0 10px;
+  }
+}
+
+.dietitian-slider-photos {
+  position: relative;
+
+  .slider-item {
+    width: (100% / 4);
+    margin: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Honey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/honey.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header class="top-nav home">
+      <div class="logo">
+        <a href="#home" class="home-link">
+        </a>
+      </div>
+      <nav>
+        <ul class="section-links">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <ul class="cta-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#" class="button">Download</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="page-section intro-section bg-overlay" style="background-image: url('assets/images/backgrounds/intro.jpg');">
+        <div class="inner">
+          <div class="content">
+            <h3><span>Real Nutrition.</span> <span>Real Dietitians.</span></h3>
+            <h1>It's just like having a dietitian in your pocket</h1>
+            <p><a href="#" class="app-store-link"><img src="assets/images/svg/button.svg" alt="Download on the App Store" /></a></p>
+            <p><a href="#how-it-works" class="scroll-link"><img src="assets/images/svg/scroll.svg" alt="Scroll" /></a></p>
+          </div>
+        </div>
+      </section>
+      <div class="phone-frame-wrapper">
+        {{#with "assets/images/screenshots/honeypot.jpg"}}
+          {{> screenshot}}
+        {{/with}}
+      </div>
+      <section id="how-it-works" class="page-multi-section">
+        <section id="profile" class="page-section bg-white">
+          <div class="section-photo" style="background-image: url('assets/images/backgrounds/profile.jpg');"></div>
+          <div class="section-screenshot">
+            {{#with "assets/images/screenshots/editprofile.jpg"}}
+              {{> screenshot}}
+            {{/with}}
+          </div>
+          <div class="inner">
+            <div class="content">
+              <h2>Customize your profile</h2>
+              <p>Choose from nine different categories based on your interests to make your Honey experience unique.</p>
+              <div class="profile-slider-icons">
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/buzz2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/fertile2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/fit2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/healthy2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/hearty2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/kid2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/lite2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/sugar2.svg">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="bite-icon">
+                    <img src="assets/images/svg/bites/tasty2.svg">
+                  </div>
+                </div>
+              </div>
+              <div class="profile-slider-details">
+                <div class="slider-item">
+                  <div class="description">
+                    <h3>Fit Bites</h3>
+                    <p>All about exercise, strength, fitness, and endurance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="find-dietitians" class="page-section bg-white">
+          <div class="section-photo" style="background-image: url('assets/images/backgrounds/find-dietitians.jpg');"></div>
+          <div class="section-screenshot">
+            {{#with "assets/images/screenshots/dietitian.jpg"}}
+              {{> screenshot}}
+            {{/with}}
+          </div>
+          <div class="inner">
+            <div class="content">
+              <h2>Find Registered Dietitians who are experts in your interest areas</h2>
+              <p>Search through our vast database of Dietitians. Find the best ones for you, follow them and read their posts.</p>
+              <div class="dietitian-slider-photos">
+                <div class="slider-item">
+                  <div class="dietitian-photo">
+                    <img src="assets/images/dietitian1.png">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="dietitian-photo">
+                    <img src="assets/images/dietitian2.png">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="dietitian-photo">
+                    <img src="assets/images/dietitian3.png">
+                  </div>
+                </div>
+                <div class="slider-item">
+                  <div class="dietitian-photo">
+                    <img src="assets/images/dietitian4.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="feed" class="page-section bg-white">
+          <div class="section-photo" style="background-image: url('assets/images/backgrounds/feed.jpg');"></div>
+          <div class="section-screenshot">
+            {{#with "assets/images/screenshots/homefeed.jpg"}}
+              {{> screenshot}}
+            {{/with}}
+          </div>
+          <div class="inner">
+            <div class="content">
+              <h2>Tailor your home feed</h2>
+              <p>Every day your feed will fill itself with highly curated and customized nutrition information from Honey and each of the dietitians you follow.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="features" class="page-section bg-white">
+        <div class="inner">
+          <div class="content">
+            <h2>It's just like having a dietitian in your pocket</h2>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="page-section bg-white">
+        <div class="inner">
+          <div class="content">
+            <h2>It's just like having a dietitian in your pocket</h2>
+          </div>
+        </div>
+      </section>
+      <footer class="bottom bg-orange">
+
+      </footer>
+    </main>
+    <aside id="side-nav">
+      <ul class="indicators">
+        <li><a href="#how-it-works">{{> indicator-svg}}</a>
+          <ul>
+            <li><a href="#profile">{{> indicator-svg}}</a></li>
+            <li><a href="#find-dietitians">{{> indicator-svg}}</a></li>
+            <li><a href="#feed">{{> indicator-svg}}</a></li>
+          </ul>
+        </li>
+        <li><a href="#features">{{> indicator-svg}}</a></li>
+        <li><a href="#about">{{> indicator-svg}}</a></li>
+      </ul>
+    </aside>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="scripts/honey.js"></script>
+  </body>
+</html>

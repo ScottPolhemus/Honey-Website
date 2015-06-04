@@ -1,0 +1,59 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  color: $honey-black;
+}
+
+h1 {
+  max-width: 600px;
+  margin: auto;
+
+  font-size: 55px;
+  line-height: 62px;
+  font-weight: 300;
+}
+
+h2 {
+  max-width: 600px;
+  margin: auto;
+
+  font-size: 45px;
+  line-height: 52px;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: .125em;
+  font-weight: 700;
+  
+  text-transform: uppercase;
+}
+
+p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 100; 
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .125em;
+  
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 12px 20px;
+
+    &.button {
+      color: white;
+      background: $honey-teal;
+      border-radius: 10px;
+    }
+  }
+}

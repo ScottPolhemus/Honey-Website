@@ -1,0 +1,149 @@
+header.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $nav-height;
+    background: white;
+    box-shadow: 0 0 4px hsla(0,0%,0%,.3);
+    z-index: -1;
+  }
+
+  .logo {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: ($nav-height - 30px) / 2;
+    left: 0;
+    right: 0;
+    margin: auto;
+    // background: $honey-orange;
+    background-image: url('../assets/images/svg/honeylogosmall.svg');
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .section-links {
+    float: left;
+    text-align: left;
+  }
+
+  .cta-links {
+    float: right;
+    text-align: right;
+  }
+
+  ul {
+    padding: 0 10px;
+    
+    li {
+      @extend .nav-link;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &:before {
+      content: '';
+      width: 0px;
+      height: $nav-height;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .at-top & {
+    &:before {
+      opacity: 0;
+    }
+
+    nav {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .logo {
+      top: 50px;
+      width: 110px;
+      height: 110px;
+      background-image: url('../assets/images/svg/honeylogo.svg');
+
+      a {
+        cursor: default;
+      }
+    }
+  }
+}
+
+.indicators {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 4px fade-out(black, .5);
+
+  li {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    background-color: white;
+
+    > a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      // background-image: url('../assets/images/svg/indicator.svg');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+    }
+
+    &.active {
+      font-weight: bold;
+
+      > a {
+        opacity: 1;
+      }
+
+      li:not(.active) {
+        font-weight: normal;
+      }
+    }
+  }
+
+  > li:first-child.active {
+    height: auto;
+    background-color: $gray-light;
+
+    > a {
+      display: none;
+    }
+
+    li {
+      background: none;
+    }
+  }
+
+  @media (max-width: ($break-md - 1)) {
+    display: none;
+  }
+}
