@@ -63,7 +63,7 @@ ScrollNav.prototype = {
     }
 
     this.$items = $(itemElements)
-    this.$targets = $(targetElements).add('#home').add(this.footer)
+    this.$targets = $(targetElements).add(this.footer)
   },
 
   updateMap: function() {
@@ -117,7 +117,7 @@ ScrollNav.prototype = {
 
     }
 
-    var atHome = !$(active).length && scrollY < window.innerHeight
+    var atHome = (active[0].getAttribute('id') === 'home')
 
     $('body').toggleClass('at-home', atHome)
 
@@ -198,11 +198,8 @@ ScrollNav.prototype = {
       $prev = $prev.find('li').last()
     }
 
-
     if($prev.length) {
       $prev.find('a').first().trigger('click')
-    } else {
-      $('.home-link').trigger('click')
     }
   }
 }

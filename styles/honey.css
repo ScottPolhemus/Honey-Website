@@ -477,17 +477,17 @@ header.top-nav {
         opacity: 1; }
       .indicators li.active li:not(.active) {
         font-weight: normal; }
-  .indicators > li:first-child {
+  .indicators > li.multi {
     -webkit-transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
             transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
     -webkit-transition-property: height, background;
             transition-property: height, background; }
-    .indicators > li:first-child.active {
+    .indicators > li.multi.active {
       height: 90px;
       background-color: #EEEEEE; }
-      .indicators > li:first-child.active > a {
+      .indicators > li.multi.active > a {
         display: none; }
-      .indicators > li:first-child.active li {
+      .indicators > li.multi.active li {
         background: none; }
   @media (max-width: 699px), (max-height: 499px) {
     .indicators {

@@ -140,7 +140,7 @@ header.top-nav {
     }
   }
 
-  > li:first-child {
+  > li.multi {
     transition: 500ms $honey-easing;
     transition-property: height, background;
 
