@@ -1,7 +1,10 @@
 $honey-orange: #F69523;
 $honey-teal: #01A6AF;
 $honey-black: #4A4A4A;
-$honey-overlay: fade-out(#19243E, .14);
+// $honey-overlay: fade-out(#19243E, .14);
+$honey-overlay: #19243E;
+
+$honey-easing: cubic-bezier(.55, .1, .25, .95);
 
 $gray-light: #EEEEEE;
 
@@ -13,3 +16,16 @@ $bold: 700;
 $nav-height: 60px;
 
 $break-md: 700px;
+$break-md-h: 500px;
+
+@mixin big {
+  @media (min-width: $break-md) and (min-height: $break-md-h) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: ($break-md - 1)), (max-height: ($break-md-h - 1)) {
+    @content;
+  }
+}

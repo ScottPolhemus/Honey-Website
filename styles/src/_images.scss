@@ -18,7 +18,7 @@
     position: absolute;
     top: 11%;
     bottom: 14.4%;
-    left: 6.75%;
+    left: 7%;
     right: 7%;
     overflow: hidden;
 
@@ -58,20 +58,27 @@
     }
   }
 
-  @media (max-width: ($break-md - 1)) {
+  @include small {
     display: none;
+  }
+}
+
+.features-phone-wrapper {
+  .phone-frame {
+    margin: auto;
+    // max-width: 20%;
   }
 }
 
 .section-photo {
   position: relative;
   height: 240px;
-  background: green;
+  background: $honey-orange;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 
-  @media (min-width: $break-md) {
+  @include big {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -90,7 +97,7 @@
   position: relative;
   margin: auto;
 
-  @media (max-width: ($break-md - 1)) {
+  @include small {
     max-width: 180px;
     height: 300px;
     margin-top: -180px;
@@ -98,7 +105,7 @@
     z-index: 3;
   }
 
-  @media (min-width: $break-md) {
+  @include big {
     position: fixed;
     top: $nav-height;
     bottom: 0;
@@ -106,12 +113,10 @@
     width: (100% / 3);
     max-width: 200px;
     margin: auto;
-    z-index: 101;
-
-    display: none;
+    z-index: 100;
 
     .page-section.active & {
-      display: block;
+      z-index: 101;
     }
 
     .phone-frame {

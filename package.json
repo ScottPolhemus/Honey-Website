@@ -4,29 +4,30 @@
   "author": "Scott Polhemus <scott@polhem.us>",
   "devDependencies": {
     "assemble": "^0.6.0-beta.5",
-    "browserify": "^10.2.0",
-    "browserify-shim": "^3.8.6",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.2.0",
+    "browserify": "^10.2.4",
+    "browserify-bower": "^0.4.3",
+    "browserify-shim": "^3.8.8",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-ext-replace": "^0.2.0",
     "gulp-livereload": "^3.8.0",
     "gulp-prettify": "^0.3.0",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-util": "^3.0.4",
+    "gulp-util": "^3.0.5",
     "js-beautify": "^1.5.6",
-    "lodash": "^3.8.0",
+    "lodash": "^3.9.3",
     "merge-stream": "^0.1.7",
     "pretty-hrtime": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.1",
-    "browserify-bower": "^0.4.3"
+    "watchify": "^3.2.1"
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
   },
   "dependencies": {
-    "flickity": "^1.0.2"
+    "flickity": "^1.0.2",
+    "flickity-imagesloaded": "^1.0.0"
   }
 }

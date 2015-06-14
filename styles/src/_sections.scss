@@ -6,7 +6,7 @@ section.page-section {
     margin-bottom: 20px;
   }
 
-  @media (min-width: $break-md) {
+  @include big {
     height: 100%;
     
     > .inner {
@@ -23,16 +23,13 @@ section.page-section {
 }
 
 section.page-multi-section {
-  @media (min-width: $break-md) {
+  @include big {
     position: relative;
     height: 300%;
 
     > section.page-section {
       height: (100% / 3);
-
-      @media (min-width: $break-md) {
-        width: (100% * 2 / 3);
-      }
+      width: (100% * 2 / 3);
     }
   }
 
@@ -43,10 +40,9 @@ section.page-multi-section {
 }
 
 section.intro-section {
-  width: 100%;
-  z-index: 100;
+  z-index: 101;
 
-  > .inner { 
+  > .inner {
     padding-top: 200px;
     padding-bottom: 200px;
   }
@@ -60,18 +56,52 @@ section.intro-section {
   }
 }
 
+section.features-section {
+  .features-phone {
+    background-image: url('../assets/images/iphone-frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 180px;
+    height: 370px;
+    margin: auto;
+  }
+}
+
 .bg-overlay {
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
+  transform: translateZ(0);
 
-  &:after {
+  &:before, &:after {
     content: '';
     position: absolute;
     top: 0; bottom: 0;
     left: 0; right: 0;
+  }
+
+  &:before {
     background: $honey-overlay;
     z-index: -1;
+  }
+
+  &:after {
+    background: inherit;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 2000ms;
+  }
+
+  > .inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &.bg-loaded {
+    &:after {
+      opacity: .14;
+    }
   }
 
   h1 {

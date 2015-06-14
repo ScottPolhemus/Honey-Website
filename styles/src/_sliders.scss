@@ -16,9 +16,24 @@
   .slider-item {
     width: (100% / 4);
     margin: auto;
+    opacity: 0.5;
+
+    &.is-selected {
+      opacity: 1;
+    }
 
     img {
       width: 100%;
+    }
+  }
+}
+
+.cycle {
+  .cycle-item {
+    display: none;
+
+    &.active {
+      display: block;
     }
   }
 }

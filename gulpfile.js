@@ -10,6 +10,7 @@ gulp.task('default', ['sass', 'watchify', 'assemble'], function() {
 
   gulp.watch(['./**/*.hbs'], ['assemble']);
   gulp.watch(['./**/*.scss'], ['sass']);
+  // Watchify handles the JavaScript
 
   gulp.watch(['./styles/*.css'], function(event) {
     livereload.changed(event.path);
