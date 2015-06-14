@@ -27,6 +27,12 @@ $break-wide-max: ($break-wide - 1);
   }
 }
 
+@mixin med {
+  @media (max-width: $break-wide) {
+    @content;
+  }
+}
+
 @mixin small {
   @media (max-width: ($break-md - 1)), (max-height: ($break-md-h - 1)) {
     @content;

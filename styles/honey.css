@@ -57,19 +57,34 @@ h1 {
   max-width: 600px;
   margin: auto;
   font-size: 55px;
-  line-height: 62px;
+  line-height: 1.2;
   font-weight: 100; }
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 45px; } }
+  @media (max-width: 699px), (max-height: 499px) {
+    h1 {
+      font-size: 40px; } }
 
 h2 {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   font-size: 45px;
-  line-height: 52px;
+  line-height: 1.2;
   font-weight: 300; }
+  @media (max-width: 1000px) {
+    h2 {
+      font-size: 35px; } }
+  @media (max-width: 699px), (max-height: 499px) {
+    h2 {
+      font-size: 28px; } }
 
 h3 {
   font-size: 21px;
   font-weight: 500; }
+  @media (max-width: 1000px) {
+    h3 {
+      font-size: 18px; } }
 
 h4 {
   font-size: 13px;
@@ -89,8 +104,11 @@ p {
   max-width: 600px;
   margin: auto;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 1.5;
   font-weight: 100; }
+  @media (max-width: 1000px) {
+    p {
+      font-size: 18px; } }
 
 p.small, section.features-section .features-content p, .cycle .cycle-item p {
   font-size: 16px;
@@ -107,11 +125,20 @@ em {
   .nav-link a, header.top-nav ul li a {
     color: inherit;
     text-decoration: none;
-    padding: 12px 20px; }
+    padding: 12px 15px;
+    -webkit-transition: .5s ease;
+            transition: .5s ease; }
+    .nav-link a:hover, header.top-nav ul li a:hover {
+      color: #01A6AF; }
     .nav-link a.button, header.top-nav ul li a.button {
       color: white;
       background: #01A6AF;
-      border-radius: 10px; }
+      border-radius: 10px;
+      padding: 12px 20px;
+      -webkit-transition: .5s ease;
+              transition: .5s ease; }
+      .nav-link a.button:hover, header.top-nav ul li a.button:hover {
+        background: #01767c; }
 
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co
@@ -246,8 +273,16 @@ http://flickity.metafizzy.co
 section.page-section {
   position: relative;
   overflow: hidden; }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.page-section {
+      padding: 0 0 75px; } }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.page-section.intro-section {
+      padding: 0; } }
   section.page-section h2 {
     margin-bottom: 20px; }
+  section.page-section .content {
+    padding: 0 25px; }
   @media (min-width: 700px) and (min-height: 500px) {
     section.page-section {
       height: 100%; }
@@ -288,6 +323,36 @@ section.intro-section {
     margin-bottom: 50px; }
   section.intro-section h4 {
     margin-bottom: 20px; }
+  section.intro-section .app-store-link {
+    background: #F69523;
+    border-radius: 10px;
+    padding: 20px 25px 22px;
+    cursor: pointer;
+    -webkit-transition: .25s ease;
+            transition: .25s ease; }
+    section.intro-section .app-store-link:hover {
+      background: #f5890b;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); }
+    section.intro-section .app-store-link img {
+      max-width: 150px;
+      vertical-align: middle; }
+  section.intro-section .scroll-link {
+    margin: 75px 0 0;
+    display: inline-block;
+    -webkit-animation: fade 2s infinite;
+            animation: fade 2s infinite; }
+
+@-webkit-keyframes fade {
+  0%, 100% {
+    opacity: 1; }
+  50% {
+    opacity: .35; } }
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 1; }
+  50% {
+    opacity: .35; } }
 
 section.feed-section .inner .content .did-you-know {
   margin: 60px auto 0;
@@ -387,7 +452,7 @@ section.about-section .content {
   padding: 25px 0; }
   @media (max-width: 699px), (max-height: 499px) {
     section.about-section .content {
-      padding: 100px 25px; } }
+      padding: 100px 25px 0; } }
   section.about-section .content h1, section.about-section .content p {
     max-width: 825px; }
   section.about-section .content h1 {
@@ -546,14 +611,14 @@ header.top-nav {
   header.top-nav .section-links {
     float: left;
     text-align: left; }
+    @media (max-width: 699px), (max-height: 499px) {
+      header.top-nav .section-links {
+        display: none; } }
   header.top-nav .cta-links {
     float: right;
     text-align: right; }
   header.top-nav ul {
     padding: 0 10px; }
-    @media (max-width: 699px), (max-height: 499px) {
-      header.top-nav ul {
-        display: none; } }
     header.top-nav ul li {
       display: inline-block;
       vertical-align: middle; }
@@ -631,7 +696,15 @@ header.top-nav {
   margin-bottom: 30px; }
   .profile-slider-icons .slider-item,
   .dietitian-slider-photos .slider-item {
-    margin: 0 10px; }
+    margin: 0 10px;
+    cursor: pointer; }
+    .profile-slider-icons .slider-item.dietitian,
+    .dietitian-slider-photos .slider-item.dietitian {
+      -webkit-transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+              transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+      .profile-slider-icons .slider-item.dietitian:hover,
+      .dietitian-slider-photos .slider-item.dietitian:hover {
+        opacity: 1; }
 
 .profile-slider-icons {
   margin-top: 30px;
@@ -643,7 +716,11 @@ header.top-nav {
   .profile-slider-icons .bite-icon {
     position: relative;
     width: 60px;
-    height: 60px; }
+    height: 60px;
+    -webkit-transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+            transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+    .profile-slider-icons .bite-icon:hover {
+      opacity: .5; }
     .profile-slider-icons .bite-icon img {
       position: absolute;
       top: 0;
@@ -659,6 +736,8 @@ header.top-nav {
     -webkit-transform: scale(1.4);
         -ms-transform: scale(1.4);
             transform: scale(1.4); }
+    .profile-slider-icons .slider-item.is-selected .bite-icon:hover {
+      opacity: 1; }
     .profile-slider-icons .slider-item.is-selected .bite-icon img.outline {
       opacity: 0; }
     .profile-slider-icons .slider-item.is-selected .bite-icon img.fill {
@@ -691,6 +770,8 @@ header.top-nav {
     opacity: 0;
     -webkit-transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
             transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+    .cycle .cycle-item p {
+      max-width: 400px; }
     .cycle .cycle-item.active {
       position: relative;
       opacity: 1; }

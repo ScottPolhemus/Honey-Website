@@ -2,8 +2,22 @@ section.page-section {
   position: relative;
   overflow: hidden;
 
+  @include small{
+    padding: 0 0 75px;
+  }
+
+  &.intro-section{
+    @include small{
+      padding:0 ;
+    }
+  }
+
   h2 {
     margin-bottom: 20px;
+  }
+
+  .content{
+    padding:0 25px;
   }
 
   @include big {
@@ -63,6 +77,43 @@ section.intro-section {
 
   h4 {
     margin-bottom: 20px;
+  }
+
+  .app-store-link{
+    background: $honey-orange;
+    border-radius: 10px;
+    padding: 20px 25px 22px;
+    // overflow:auto;
+    cursor:pointer;
+    transition:.25s ease;
+
+    &:hover{
+      background:darken($honey-orange, 5%);
+      // padding: 20px 30px 22px;
+      // transform: translateY(-10px);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    img{
+      max-width:150px;
+      vertical-align:middle;
+    }
+  }
+
+  .scroll-link{
+    margin:75px 0 0;
+    display:inline-block;
+    animation:fade 2s infinite;
+  }
+}
+
+@keyframes fade{
+  0%, 100%{
+    opacity:1;
+  }
+  
+  50%{
+    opacity:.35;
   }
 }
 
@@ -201,7 +252,7 @@ section.about-section{
     padding:25px 0;
 
     @include small{
-      padding:100px 25px;
+      padding:100px 25px 0;
     }
 
     h1, p{
