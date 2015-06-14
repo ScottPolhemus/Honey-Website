@@ -289,6 +289,27 @@ section.intro-section {
   section.intro-section h4 {
     margin-bottom: 20px; }
 
+section.feed-section .inner .content .did-you-know {
+  margin: 60px auto 0;
+  max-width: 400px; }
+  section.feed-section .inner .content .did-you-know h4 {
+    margin: 0 0 5px; }
+  section.feed-section .inner .content .did-you-know .cycle-shuffle-button {
+    border: none;
+    background-color: white;
+    font-size: 20px;
+    color: #01A6AF;
+    margin: 10px 0 0;
+    -webkit-transition: .5s ease;
+            transition: .5s ease;
+    cursor: pointer; }
+    section.feed-section .inner .content .did-you-know .cycle-shuffle-button:hover {
+      -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+              transform: rotate(90deg); }
+    section.feed-section .inner .content .did-you-know .cycle-shuffle-button:focus {
+      outline: none; }
+
 section.features-section .features-content {
   max-width: 1100px;
   margin: auto;
@@ -298,6 +319,8 @@ section.features-section .features-content {
   @media (max-width: 699px), (max-height: 499px) {
     section.features-section .features-content:after {
       content: 'flickity'; } }
+  section.features-section .features-content h3 {
+    line-height: 1px; }
   @media (min-width: 700px) and (min-height: 500px) {
     section.features-section .features-content .features-content-item {
       float: left;
@@ -307,7 +330,8 @@ section.features-section .features-content {
       padding-right: 20px;
       width: 33.33333%;
       cursor: pointer;
-      opacity: .3; }
+      opacity: .3;
+      margin: 15px 0; }
       section.features-section .features-content .features-content-item.active {
         opacity: 1; }
       section.features-section .features-content .features-content-item:nth-child(odd) {
