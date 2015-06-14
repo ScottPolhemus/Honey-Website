@@ -2,8 +2,16 @@ section.page-section {
   position: relative;
   overflow: hidden;
 
+  @include small{
+    padding: 0 0 75px;
+  }
+
   h2 {
     margin-bottom: 20px;
+  }
+
+  .content{
+    padding:0 25px;
   }
 
   @include big {
@@ -226,7 +234,7 @@ section.about-section{
     padding:25px 0;
 
     @include small{
-      padding:100px 25px;
+      padding:100px 25px 0;
     }
 
     h1, p{

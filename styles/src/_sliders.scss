@@ -7,6 +7,15 @@
 
   .slider-item {
     margin: 0 10px;
+    cursor:pointer;
+
+    &.dietitian{
+      transition: 500ms $honey-easing;
+
+      &:hover{
+        opacity:1;
+      }
+    }
   }
 }
 
@@ -81,6 +90,7 @@
 
     p {
       @extend p.small;
+      max-width:400px;
     }
 
     &.active, &.in {
