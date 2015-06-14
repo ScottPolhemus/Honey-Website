@@ -151,12 +151,23 @@ section.feed-section{
 }
 
 section.features-section {
-  h2 {
-    @include big {
-      position: absolute;
-      top: 40px;
-      left: 0;
-      right: 0;
+
+  .content{
+    position:relative;
+
+    @include small{
+      padding:75px 0 0;
+    }
+
+    h2{
+      position:absolute;
+      top:10%;
+      left:0;
+      right:0;
+
+      @include small{
+        top:0;
+      }
     }
   }
 
@@ -176,7 +187,7 @@ section.features-section {
     }
 
     h3{
-      margin-bottom: 0.5em;
+      line-height:1px;
     }
 
     p {
@@ -201,7 +212,6 @@ section.features-section {
 
         &:nth-child(odd) {
           float: right;
-          clear: right;
           text-align: left;
         }
       }
@@ -417,6 +427,18 @@ footer.bottom {
 
 .bg-white {
   background: white;
+
+  h1, h2, h4 {
+    color: $honey-orange;
+  }
+
+  h3{
+    color:$honey-teal;
+  }
+}
+
+.bg-grey{
+  background:$honey-grey;
 
   h1, h2, h4 {
     color: $honey-orange;
