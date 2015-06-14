@@ -8,6 +8,16 @@ var Cycle = function(el) {
   this.index = this.$items.filter('.active').index()
 
   this.easing = [.55, .1, .25, .95]
+
+  $(window).on('resize', function() {
+    var maxH = 0;
+
+    for(var i = 0; i < this.$items.length; i++) {
+      maxH = Math.max(this.$items.eq(i).height(), maxH)
+    }
+    
+    this.$el.css('min-height', maxH);
+  }.bind(this))
 }
 
 Cycle.prototype = {

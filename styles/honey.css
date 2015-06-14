@@ -676,14 +676,16 @@ header.top-nav {
 .cycle {
   position: relative; }
   .cycle .cycle-item {
-    display: none; }
-    .cycle .cycle-item.active, .cycle .cycle-item.in {
-      display: block; }
-    .cycle .cycle-item.out {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+            transition: opacity 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+    .cycle .cycle-item.active {
+      position: relative;
+      opacity: 1; }
 
 .phone-frame {
   position: relative;

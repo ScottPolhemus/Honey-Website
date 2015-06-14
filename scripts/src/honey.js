@@ -100,6 +100,8 @@ var Site = function() {
     $featureItems.eq(i).addClass('active').siblings().removeClass('active')
     $featureImages.eq(i).addClass('active').siblings().removeClass('active')
   })
+
+  $(window).resize()
 }
 
 Site.prototype = {
