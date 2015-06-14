@@ -3,6 +3,7 @@ var Flickity = require('flickity')
 require('flickity-imagesloaded')
 
 var ScrollNav = require('./lib/scroll-nav')
+var Cycle = require('./lib/cycle')
 
 var Site = function() {
   this.loadImages()
@@ -17,7 +18,8 @@ var Site = function() {
   var biteSlider = new Flickity($sliderIcons[0], {
     cellSelector: '.slider-item',
     pageDots: false,
-    wrapAround: true
+    wrapAround: true,
+    imagesLoaded: true
   })
 
   $sliderIcons.find('.slider-item').on('click', function() {
@@ -26,10 +28,12 @@ var Site = function() {
 
   var $biteCaptions = $sliderIcons.next('.cycle-captions')
 
+  var biteCycle = new Cycle($sliderIcons.next('.cycle-captions'))
+
   $sliderIcons.on('cellSelect', function() {
     var i = biteSlider.selectedIndex
 
-    $biteCaptions.find('.cycle-item').eq(i).addClass('active').siblings().removeClass('active')
+    biteCycle.go(i)
   })
 
   var $sliderPhotos = $('.dietitian-slider-photos');
@@ -39,32 +43,32 @@ var Site = function() {
     pageDots: false,
     prevNextButtons: false,
     contain: true,
-    draggable: false
+    draggable: false,
+    imagesLoaded: true
   })
+
+  var dietitianCycle = new Cycle($sliderPhotos.next('.cycle-captions'));
 
   $sliderPhotos.find('.slider-item').on('click', function() {
     dietitianSlider.select($(this).index())
   })
 
-  var $dietitianCaptions = $sliderPhotos.next('.cycle-captions')
-
   $sliderPhotos.on('cellSelect', function() {
     var i = dietitianSlider.selectedIndex
 
-    $dietitianCaptions.find('.cycle-item').eq(i).addClass('active').siblings().removeClass('active')
+    dietitianCycle.go(i)
   })
 
   var $cycleShuffle = $('.cycle-shuffle')
 
+  var shuffleCycle = new Cycle($cycleShuffle)
+
   $cycleShuffle.next('.cycle-shuffle-button').on('click', function() {
-    var $active = $cycleShuffle.find('.active')
-    var $next = $active.next('.cycle-item')
+    var i = shuffleCycle.index + 1
 
-    if(!$next.length) {
-      $next = $cycleShuffle.find('.cycle-item').first()
-    }
+    i = i >= shuffleCycle.$items.length ? 0 : i
 
-    $next.addClass('active').siblings().removeClass('active')
+    shuffleCycle.go(i)
   })
 
   var $featureContent = $('.features-content')
@@ -85,7 +89,8 @@ var Site = function() {
     pageDots: false,
     prevNextButtons: true,
     wrapAround: true,
-    watchCSS: true
+    watchCSS: true,
+    imagesLoaded: true
   })
 
   $featureContent.on('cellSelect', function() {
