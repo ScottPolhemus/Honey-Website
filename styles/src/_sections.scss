@@ -16,7 +16,7 @@ section.page-section {
 
       > .content {
         display: table-cell;
-        vertical-align: middle;  
+        vertical-align: middle;
       }
     }
   }
@@ -57,7 +57,41 @@ section.intro-section {
 }
 
 section.features-section {
+  .features-content {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+
+    p {
+      @extend p.small;
+    }
+
+    .features-content-item {
+      @include big {
+        float: left;
+        clear: left;
+        text-align: right;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: (100% / 3);
+        cursor: pointer;
+        opacity: .3;
+
+        &.active {
+          opacity: 1;
+        }
+
+        &:nth-child(odd) {
+          float: right;
+          text-align: left;
+        }
+      }
+    }
+  }
+
   .features-phone {
+    // display: none;
+    @include fill;
     background-image: url('../assets/images/iphone-frame.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -65,6 +99,28 @@ section.features-section {
     width: 180px;
     height: 370px;
     margin: auto;
+
+    @include big {
+      width: (100% / 3);
+      max-width: 250px;
+      height: auto;
+    }
+
+    .features-phone-screenshot {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      img {
+        @include fill;
+        bottom: 2.3%;
+        left: 0.25%;
+        max-width: 82.5%;
+        margin: auto;
+      }
+    }
   }
 }
 

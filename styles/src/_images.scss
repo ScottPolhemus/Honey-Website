@@ -37,6 +37,7 @@
   max-width: 200px;
   margin: auto;
   z-index: 101;
+  pointer-events: none;
 
   .phone-frame {
     position: absolute;
@@ -96,6 +97,7 @@
 .section-screenshot {
   position: relative;
   margin: auto;
+  pointer-events: none;
 
   @include small {
     max-width: 180px;

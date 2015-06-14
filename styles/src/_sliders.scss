@@ -32,6 +32,10 @@
   .cycle-item {
     display: none;
 
+    p {
+      @extend p.small;
+    }
+
     &.active {
       display: block;
     }
