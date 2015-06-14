@@ -14,10 +14,22 @@ var Site = function() {
 
   var $sliderIcons = $('.profile-slider-icons');
 
-  new Flickity($sliderIcons[0], {
+  var biteSlider = new Flickity($sliderIcons[0], {
     cellSelector: '.slider-item',
     pageDots: false,
     wrapAround: true
+  })
+
+  $sliderIcons.find('.slider-item').on('click', function() {
+    biteSlider.select($(this).index())
+  })
+
+  var $biteCaptions = $sliderIcons.next('.cycle-captions')
+
+  $sliderIcons.on('cellSelect', function() {
+    var i = biteSlider.selectedIndex
+
+    $biteCaptions.find('.cycle-item').eq(i).addClass('active').siblings().removeClass('active')
   })
 
   var $sliderPhotos = $('.dietitian-slider-photos');
@@ -34,12 +46,12 @@ var Site = function() {
     dietitianSlider.select($(this).index())
   })
 
-  var $cycleCaptions = $('.cycle-captions')
+  var $dietitianCaptions = $sliderPhotos.next('.cycle-captions')
 
   $sliderPhotos.on('cellSelect', function() {
     var i = dietitianSlider.selectedIndex
 
-    $cycleCaptions.find('.cycle-item').eq(i).addClass('active').siblings().removeClass('active')
+    $dietitianCaptions.find('.cycle-item').eq(i).addClass('active').siblings().removeClass('active')
   })
 
   var $cycleShuffle = $('.cycle-shuffle')
@@ -53,6 +65,14 @@ var Site = function() {
     }
 
     $next.addClass('active').siblings().removeClass('active')
+  })
+
+  var $featureItems = $('.features-content-item')
+  var $featureImages = $('.features-phone-screenshot')
+
+  $featureItems.on('click', function() {
+    $(this).addClass('active').siblings().removeClass('active')
+    $featureImages.eq($(this).index()).addClass('active').siblings().removeClass('active')
   })
 }
 
