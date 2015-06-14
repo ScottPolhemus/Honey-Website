@@ -47,6 +47,10 @@ header.top-nav {
   .section-links {
     float: left;
     text-align: left;
+
+    @include small {
+      display: none;
+    }
   }
 
   .cta-links {
@@ -56,10 +60,6 @@ header.top-nav {
 
   ul {
     padding: 0 10px;
-
-    @include small {
-      display: none;
-    }
     
     li {
       @extend .nav-link;

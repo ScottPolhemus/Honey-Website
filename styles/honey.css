@@ -107,11 +107,20 @@ em {
   .nav-link a, header.top-nav ul li a {
     color: inherit;
     text-decoration: none;
-    padding: 12px 20px; }
+    padding: 12px 15px;
+    -webkit-transition: .5s ease;
+            transition: .5s ease; }
+    .nav-link a:hover, header.top-nav ul li a:hover {
+      color: #01A6AF; }
     .nav-link a.button, header.top-nav ul li a.button {
       color: white;
       background: #01A6AF;
-      border-radius: 10px; }
+      border-radius: 10px;
+      padding: 12px 20px;
+      -webkit-transition: .5s ease;
+              transition: .5s ease; }
+      .nav-link a.button:hover, header.top-nav ul li a.button:hover {
+        background: #01767c; }
 
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co
@@ -288,6 +297,37 @@ section.intro-section {
     margin-bottom: 50px; }
   section.intro-section h4 {
     margin-bottom: 20px; }
+  section.intro-section .app-store-link {
+    background: #F69523;
+    border-radius: 10px;
+    padding: 20px 25px 22px;
+    overflow: auto;
+    cursor: pointer;
+    -webkit-transition: .25s ease;
+            transition: .25s ease; }
+    section.intro-section .app-store-link:hover {
+      background: #f5890b;
+      padding: 20px 30px 22px; }
+    section.intro-section .app-store-link img {
+      max-width: 150px;
+      vertical-align: middle; }
+  section.intro-section .scroll-link {
+    margin: 75px 0 0;
+    display: inline-block;
+    -webkit-animation: fade 2s infinite;
+            animation: fade 2s infinite; }
+
+@-webkit-keyframes fade {
+  0%, 100% {
+    opacity: 1; }
+  50% {
+    opacity: .35; } }
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 1; }
+  50% {
+    opacity: .35; } }
 
 section.feed-section .inner .content .did-you-know {
   margin: 60px auto 0;
@@ -538,14 +578,14 @@ header.top-nav {
   header.top-nav .section-links {
     float: left;
     text-align: left; }
+    @media (max-width: 699px), (max-height: 499px) {
+      header.top-nav .section-links {
+        display: none; } }
   header.top-nav .cta-links {
     float: right;
     text-align: right; }
   header.top-nav ul {
     padding: 0 10px; }
-    @media (max-width: 699px), (max-height: 499px) {
-      header.top-nav ul {
-        display: none; } }
     header.top-nav ul li {
       display: inline-block;
       vertical-align: middle; }
