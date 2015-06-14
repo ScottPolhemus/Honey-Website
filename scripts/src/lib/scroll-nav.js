@@ -117,7 +117,7 @@ ScrollNav.prototype = {
 
     }
 
-    var atHome = (active[0].getAttribute('id') === 'home')
+    var atHome = (window.scrollY < window.innerHeight)
 
     $('body').toggleClass('at-home', atHome)
 

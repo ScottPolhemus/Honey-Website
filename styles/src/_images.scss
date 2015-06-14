@@ -33,8 +33,7 @@
   top: $nav-height;
   bottom: 0;
   right: (100% / 3);
-  width: (100% / 3);
-  max-width: 200px;
+  width: 200px;
   margin: auto;
   z-index: 101;
   pointer-events: none;
@@ -44,24 +43,23 @@
     top: 50%;
     right: 0;
     width: 100%;
+    transform-origin: 50% 0%;
     transform: translateX(50%) translateY(-50%);
 
-    @media (max-width: $break-wide-max) {
-      transform: translateX(75%) translateY(-50%);
-    }
+    // @media (max-width: $break-wide-max) {
+    //   transform: translateX(75%) translateY(-50%);
+    // }
   }
 
-  .at-home & {
-    top: 100%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    max-width: 350px;
+  // .at-home & {
+    right: 50%;
+    width: 350px;
 
     .phone-frame {
-      transform: translateY(-150px);
+      top: 100%;
+      transform: translateX(50%) translateY(-140px);
     }
-  }
+  // }
 
   @include small {
     display: none;
@@ -120,6 +118,10 @@
     max-width: 200px;
     margin: auto;
     z-index: 100;
+
+    .at-home & {
+      opacity: 0;
+    }
 
     .page-section.active & {
       z-index: 101;

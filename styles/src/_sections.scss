@@ -100,6 +100,15 @@ section.feed-section{
 }
 
 section.features-section {
+  h2 {
+    @include big {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+    }
+  }
+
   .features-content {
     max-width: 1100px;
     margin: auto;
@@ -116,7 +125,7 @@ section.features-section {
     }
 
     h3{
-      line-height:1px;
+      margin-bottom: 0.5em;
     }
 
     p {
@@ -141,6 +150,7 @@ section.features-section {
 
         &:nth-child(odd) {
           float: right;
+          clear: right;
           text-align: left;
         }
       }

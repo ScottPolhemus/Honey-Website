@@ -3,6 +3,7 @@ var Flickity = require('flickity')
 require('flickity-imagesloaded')
 
 var ScrollNav = require('./lib/scroll-nav')
+var ScrollPhone = require('./lib/scroll-phone')
 var Cycle = require('./lib/cycle')
 
 var Site = function() {
@@ -10,6 +11,7 @@ var Site = function() {
 
   this.$body = $('body')
   this.nav = new ScrollNav()
+  this.phone = new ScrollPhone()
 
   $(window).on('scroll', this.checkHeader.bind(this))
 
