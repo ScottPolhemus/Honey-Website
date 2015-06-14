@@ -332,7 +332,6 @@ section.intro-section {
             transition: .25s ease; }
     section.intro-section .app-store-link:hover {
       background: #f5890b;
-      padding: 20px 30px 22px;
       box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); }
     section.intro-section .app-store-link img {
       max-width: 150px;
