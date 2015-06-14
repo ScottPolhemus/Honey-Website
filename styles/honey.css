@@ -886,11 +886,6 @@ header.top-nav {
             -ms-transform: translateX(50%) translateY(-50%);
                 transform: translateX(50%) translateY(-50%);
         background: none; } }
-    @media (min-width: 700px) and (min-height: 500px) and (max-width: 999px) {
-      .section-screenshot .phone-frame {
-        -webkit-transform: translateX(75%) translateY(-50%);
-            -ms-transform: translateX(75%) translateY(-50%);
-                transform: translateX(75%) translateY(-50%); } }
 
 .founders .half img {
   width: 140px; }
