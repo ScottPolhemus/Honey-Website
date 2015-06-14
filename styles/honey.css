@@ -276,6 +276,9 @@ section.page-section {
   @media (max-width: 699px), (max-height: 499px) {
     section.page-section {
       padding: 0 0 75px; } }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.page-section.intro-section {
+      padding: 0; } }
   section.page-section h2 {
     margin-bottom: 20px; }
   section.page-section .content {
@@ -372,6 +375,20 @@ section.feed-section .inner .content .did-you-know {
               transform: rotate(90deg); }
     section.feed-section .inner .content .did-you-know .cycle-shuffle-button:focus {
       outline: none; }
+
+section.features-section .content {
+  position: relative; }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.features-section .content {
+      padding: 75px 0 0; } }
+  section.features-section .content h1 {
+    position: absolute;
+    top: 7.5%;
+    left: 0;
+    right: 0; }
+    @media (max-width: 699px), (max-height: 499px) {
+      section.features-section .content h1 {
+        top: 0; } }
 
 section.features-section .features-content {
   max-width: 1100px;
