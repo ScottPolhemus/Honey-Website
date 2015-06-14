@@ -249,7 +249,14 @@ section.page-section {
     height: 300%; }
     section.page-multi-section > section.page-section {
       height: 33.33333%;
-      width: 66.66667%; } }
+      width: 66.66667%; }
+      section.page-multi-section > section.page-section > .inner > .content {
+        padding-left: 100px;
+        padding-right: 100px; } }
+      @media (min-width: 700px) and (min-height: 500px) and (max-width: 999px) {
+        section.page-multi-section > section.page-section > .inner > .content {
+          padding-left: 50px;
+          padding-right: 50px; } }
 
 section.page-multi-section ~ section.page-section {
   z-index: 102;
@@ -270,6 +277,11 @@ section.features-section .features-content {
   max-width: 1100px;
   margin: auto;
   overflow: hidden; }
+  section.features-section .features-content:after {
+    display: none; }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.features-section .features-content:after {
+      content: 'flickity'; } }
   @media (min-width: 700px) and (min-height: 500px) {
     section.features-section .features-content .features-content-item {
       float: left;
@@ -285,13 +297,12 @@ section.features-section .features-content {
       section.features-section .features-content .features-content-item:nth-child(odd) {
         float: right;
         text-align: left; } }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.features-section .features-content .features-content-item {
+      width: 100%; } }
 
 section.features-section .features-phone {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   background-image: url("../assets/images/iphone-frame.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -301,6 +312,11 @@ section.features-section .features-phone {
   margin: auto; }
   @media (min-width: 700px) and (min-height: 500px) {
     section.features-section .features-phone {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       width: 33.33333%;
       max-width: 250px;
       height: auto; } }
@@ -544,6 +560,11 @@ header.top-nav {
     -webkit-transform: translateX(50%) translateY(-50%);
         -ms-transform: translateX(50%) translateY(-50%);
             transform: translateX(50%) translateY(-50%); }
+    @media (max-width: 999px) {
+      .phone-frame-wrapper .phone-frame {
+        -webkit-transform: translateX(75%) translateY(-50%);
+            -ms-transform: translateX(75%) translateY(-50%);
+                transform: translateX(75%) translateY(-50%); } }
   .at-home .phone-frame-wrapper {
     top: 100%;
     bottom: auto;
@@ -612,6 +633,11 @@ header.top-nav {
             -ms-transform: translateX(50%) translateY(-50%);
                 transform: translateX(50%) translateY(-50%);
         background: none; } }
+    @media (min-width: 700px) and (min-height: 500px) and (max-width: 999px) {
+      .section-screenshot .phone-frame {
+        -webkit-transform: translateX(75%) translateY(-50%);
+            -ms-transform: translateX(75%) translateY(-50%);
+                transform: translateX(75%) translateY(-50%); } }
 
 * {
   box-sizing: border-box; }

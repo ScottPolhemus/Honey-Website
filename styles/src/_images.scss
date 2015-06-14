@@ -45,6 +45,10 @@
     right: 0;
     width: 100%;
     transform: translateX(50%) translateY(-50%);
+
+    @media (max-width: $break-wide-max) {
+      transform: translateX(75%) translateY(-50%);
+    }
   }
 
   .at-home & {
@@ -128,6 +132,10 @@
       width: 100%;
       transform: translateX(50%) translateY(-50%);
       background: none;
+
+      @media (max-width: $break-wide-max) {
+        transform: translateX(75%) translateY(-50%);
+      }
     }
   }
 }

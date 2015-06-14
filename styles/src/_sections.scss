@@ -30,6 +30,16 @@ section.page-multi-section {
     > section.page-section {
       height: (100% / 3);
       width: (100% * 2 / 3);
+
+      > .inner > .content {
+        padding-left: 100px;
+        padding-right: 100px;
+
+        @media (max-width: $break-wide-max) {
+          padding-left: 50px;
+          padding-right: 50px;
+        }
+      }
     }
   }
 
@@ -62,6 +72,16 @@ section.features-section {
     margin: auto;
     overflow: hidden;
 
+    &:after {
+      display: none;
+    }
+
+    @include small {
+      &:after {
+        content: 'flickity';
+      }
+    }
+
     p {
       @extend p.small;
     }
@@ -86,12 +106,15 @@ section.features-section {
           text-align: left;
         }
       }
+
+      @include small {
+        width: 100%;
+      }
     }
   }
 
   .features-phone {
-    // display: none;
-    @include fill;
+    position: relative;
     background-image: url('../assets/images/iphone-frame.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -101,6 +124,7 @@ section.features-section {
     margin: auto;
 
     @include big {
+      @include fill;
       width: (100% / 3);
       max-width: 250px;
       height: auto;

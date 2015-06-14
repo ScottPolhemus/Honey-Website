@@ -67,16 +67,55 @@ var Site = function() {
     $next.addClass('active').siblings().removeClass('active')
   })
 
+  var $featureContent = $('.features-content')
   var $featureItems = $('.features-content-item')
   var $featureImages = $('.features-phone-screenshot')
 
-  $featureItems.on('click', function() {
-    $(this).addClass('active').siblings().removeClass('active')
-    $featureImages.eq($(this).index()).addClass('active').siblings().removeClass('active')
+  $featureItems.on('click', function(event) {
+    if(this.isBig()) {
+      var $item = $(event.currentTarget);
+      
+      $item.addClass('active').siblings().removeClass('active')
+      $featureImages.eq($item.index()).addClass('active').siblings().removeClass('active')
+    }
+  }.bind(this))
+
+  var featureSlider = new Flickity($featureContent[0], {
+    cellSelector: '.features-content-item',
+    pageDots: false,
+    prevNextButtons: true,
+    wrapAround: true,
+    watchCSS: true
+  })
+
+  $featureContent.on('cellSelect', function() {
+    var i = featureSlider.selectedIndex
+    console.log(i)
+
+    $featureItems.eq(i).addClass('active').siblings().removeClass('active')
+    $featureImages.eq(i).addClass('active').siblings().removeClass('active')
   })
 }
 
 Site.prototype = {
+  isSmall: function() {
+    var ww = window.innerWidth
+    var wh = window.innerHeight
+
+    return (ww < 700 || wh < 500)
+  },
+
+  isBig: function() {
+    var ww = window.innerWidth
+    var wh = window.innerHeight
+
+    return (ww >= 700 && wh >= 500)
+  },
+
+  getSize: function() {
+    return this.isSmall ? 'small' : 'big';
+  },
+
   checkHeader: function() {
     this.$body.toggleClass('at-top', window.scrollY <= 50)
   },

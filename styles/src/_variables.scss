@@ -18,6 +18,9 @@ $nav-height: 60px;
 $break-md: 700px;
 $break-md-h: 500px;
 
+$break-wide: 1000px;
+$break-wide-max: ($break-wide - 1);
+
 @mixin big {
   @media (min-width: $break-md) and (min-height: $break-md-h) {
     @content;
