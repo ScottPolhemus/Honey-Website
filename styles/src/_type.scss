@@ -3,13 +3,18 @@ html {
   color: $honey-black;
 }
 
+h1,h2,h3,h4,h5,p,a{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1 {
   max-width: 600px;
   margin: auto;
 
   font-size: 55px;
   line-height: 62px;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 h2 {
@@ -21,13 +26,26 @@ h2 {
   font-weight: 300;
 }
 
+h3{
+  font-size:21px;
+  font-weight:500;
+}
+
 h4 {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 19px;
   letter-spacing: .125em;
-  font-weight: 700;
+  font-weight: 600;
   
   text-transform: uppercase;
+}
+
+h5 {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 100; 
 }
 
 p {
@@ -36,6 +54,10 @@ p {
   font-size: 20px;
   line-height: 30px;
   font-weight: 100; 
+}
+
+em{
+  font-style:italic;
 }
 
 .nav-link {
