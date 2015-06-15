@@ -415,6 +415,7 @@ section.features-section .features-content {
         opacity: 1; }
       section.features-section .features-content .features-content-item:nth-child(odd) {
         float: right;
+        clear: right;
         text-align: left; } }
   @media (max-width: 699px), (max-height: 499px) {
     section.features-section .features-content .features-content-item {

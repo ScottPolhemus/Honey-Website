@@ -212,6 +212,7 @@ section.features-section {
 
         &:nth-child(odd) {
           float: right;
+          clear: right;
           text-align: left;
         }
       }
