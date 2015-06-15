@@ -375,12 +375,19 @@ section.feed-section .inner .content .did-you-know {
     section.feed-section .inner .content .did-you-know .cycle-shuffle-button:focus {
       outline: none; }
 
-@media (min-width: 700px) and (min-height: 500px) {
-  section.features-section h2 {
+section.features-section .content {
+  position: relative; }
+  @media (max-width: 699px), (max-height: 499px) {
+    section.features-section .content {
+      padding: 75px 0 0; } }
+  section.features-section .content h2 {
     position: absolute;
-    top: 40px;
+    top: 10%;
     left: 0;
-    right: 0; } }
+    right: 0; }
+    @media (max-width: 699px), (max-height: 499px) {
+      section.features-section .content h2 {
+        top: 4%; } }
 
 section.features-section .features-content {
   max-width: 1100px;
@@ -392,7 +399,7 @@ section.features-section .features-content {
     section.features-section .features-content:after {
       content: 'flickity'; } }
   section.features-section .features-content h3 {
-    margin-bottom: 0.5em; }
+    line-height: 1px; }
   @media (min-width: 700px) and (min-height: 500px) {
     section.features-section .features-content .features-content-item {
       float: left;
@@ -408,7 +415,6 @@ section.features-section .features-content {
         opacity: 1; }
       section.features-section .features-content .features-content-item:nth-child(odd) {
         float: right;
-        clear: right;
         text-align: left; } }
   @media (max-width: 699px), (max-height: 499px) {
     section.features-section .features-content .features-content-item {
@@ -564,6 +570,13 @@ footer.bottom {
   .bg-white h1, .bg-white h2, .bg-white h4 {
     color: #F69523; }
   .bg-white h3 {
+    color: #01A6AF; }
+
+.bg-grey {
+  background: #F4F4F4; }
+  .bg-grey h1, .bg-grey h2, .bg-grey h4 {
+    color: #F69523; }
+  .bg-grey h3 {
     color: #01A6AF; }
 
 .bg-orange {
