@@ -271,8 +271,7 @@ http://flickity.metafizzy.co
   opacity: 1; }
 
 section.page-section {
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
   @media (max-width: 699px), (max-height: 499px) {
     section.page-section {
       padding: 0 0 75px; } }
@@ -684,8 +683,6 @@ header.top-nav {
       font-weight: bold; }
       .indicators li.active > a .indicator-dot {
         fill: #F69523; }
-      .indicators li.active li:not(.active) {
-        font-weight: normal; }
   .indicators > li.multi {
     -webkit-transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
             transition: 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
@@ -815,7 +812,7 @@ header.top-nav {
 
 .phone-frame-wrapper {
   position: fixed;
-  top: 60px;
+  top: 0;
   bottom: 0;
   right: 33.33333%;
   width: 200px;
@@ -824,6 +821,11 @@ header.top-nav {
   pointer-events: none;
   right: 50%;
   width: 350px; }
+  .past-multi .phone-frame-wrapper {
+    position: absolute;
+    -webkit-transform: translateY(300%);
+        -ms-transform: translateY(300%);
+            transform: translateY(300%); }
   .phone-frame-wrapper .phone-frame {
     position: absolute;
     top: 50%;
@@ -862,7 +864,12 @@ header.top-nav {
       right: 0;
       width: 33.33333%;
       height: auto;
-      z-index: 1; } }
+      z-index: 1; }
+      .past-multi .section-photo {
+        position: absolute;
+        right: auto;
+        left: 100%;
+        width: 50%; } }
   .page-section.active .section-photo {
     z-index: 2; }
 
@@ -887,6 +894,9 @@ header.top-nav {
       max-width: 200px;
       margin: auto;
       z-index: 100; }
+      .past-multi .section-screenshot {
+        position: absolute;
+        right: 0; }
       .at-home .section-screenshot {
         opacity: 0; }
       .page-section.active .section-screenshot {

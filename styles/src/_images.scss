@@ -30,13 +30,18 @@
 
 .phone-frame-wrapper {
   position: fixed;
-  top: $nav-height;
+  top: 0;
   bottom: 0;
   right: (100% / 3);
   width: 200px;
   margin: auto;
   z-index: 101;
   pointer-events: none;
+
+  .past-multi & {
+    position: absolute;
+    transform: translateY(300%);
+  }
 
   .phone-frame {
     position: absolute;
@@ -89,6 +94,13 @@
     width: (100% / 3);
     height: auto;
     z-index: 1;
+
+    .past-multi & {
+      position: absolute;
+      right: auto;
+      left: 100%;
+      width: 50%;
+    }
   }
 
   .page-section.active & {
@@ -118,6 +130,11 @@
     max-width: 200px;
     margin: auto;
     z-index: 100;
+
+    .past-multi & {
+      position: absolute;
+      right: 0;
+    }
 
     .at-home & {
       opacity: 0;

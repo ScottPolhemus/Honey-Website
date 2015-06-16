@@ -3,7 +3,7 @@ require('jquery-mousewheel')($)
 
 var Velocity = require('velocity')
 
-var ScrollNav = function() {
+var HoneyNav = function() {
   this.el = document.querySelector('.indicators')
   this.container = document.querySelector('main')
   this.footer = document.querySelector('footer.bottom')
@@ -39,7 +39,7 @@ var ScrollNav = function() {
   }.bind(this))
 }
 
-ScrollNav.prototype = {
+HoneyNav.prototype = {
   updateItems: function() {
     this.items = {}
     this.targets = {}
@@ -119,7 +119,10 @@ ScrollNav.prototype = {
 
     var atHome = (window.scrollY < window.innerHeight)
 
+    var pastMulti = (window.scrollY > this.targets.feed.offsetTop + window.innerHeight)
+
     $('body').toggleClass('at-home', atHome)
+    $('body').toggleClass('past-multi', pastMulti)
 
     $(active).add(activeItems).addClass('active')
 
@@ -204,4 +207,4 @@ ScrollNav.prototype = {
   }
 }
 
-module.exports = ScrollNav
+module.exports = HoneyNav

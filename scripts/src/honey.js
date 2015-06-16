@@ -2,16 +2,16 @@ var $ = require('jquery')
 var Flickity = require('flickity')
 require('flickity-imagesloaded')
 
-var ScrollNav = require('./lib/scroll-nav')
-var ScrollPhone = require('./lib/scroll-phone')
-var Cycle = require('./lib/cycle')
+var HoneyNav = require('./lib/nav')
+var HoneyPhone = require('./lib/phone')
+var HoneyCycle = require('./lib/cycle')
 
-var Site = function() {
+var HoneySite = function() {
   this.loadImages()
 
   this.$body = $('body')
-  this.nav = new ScrollNav()
-  this.phone = new ScrollPhone()
+  this.nav = new HoneyNav()
+  this.phone = new HoneyPhone()
 
   $(window).on('scroll', this.checkHeader.bind(this))
 
@@ -30,7 +30,7 @@ var Site = function() {
 
   var $biteCaptions = $sliderIcons.next('.cycle-captions')
 
-  var biteCycle = new Cycle($sliderIcons.next('.cycle-captions'))
+  var biteCycle = new HoneyCycle($sliderIcons.next('.cycle-captions'))
 
   $sliderIcons.on('cellSelect', function() {
     var i = biteSlider.selectedIndex
@@ -49,7 +49,7 @@ var Site = function() {
     imagesLoaded: true
   })
 
-  var dietitianCycle = new Cycle($sliderPhotos.next('.cycle-captions'));
+  var dietitianCycle = new HoneyCycle($sliderPhotos.next('.cycle-captions'));
 
   $sliderPhotos.find('.slider-item').on('click', function() {
     dietitianSlider.select($(this).index())
@@ -63,7 +63,7 @@ var Site = function() {
 
   var $cycleShuffle = $('.cycle-shuffle')
 
-  var shuffleCycle = new Cycle($cycleShuffle)
+  var shuffleCycle = new HoneyCycle($cycleShuffle)
 
   $cycleShuffle.next('.cycle-shuffle-button').on('click', function() {
     var i = shuffleCycle.index + 1
@@ -106,7 +106,7 @@ var Site = function() {
   $(window).resize()
 }
 
-Site.prototype = {
+HoneySite.prototype = {
   isSmall: function() {
     var ww = window.innerWidth
     var wh = window.innerHeight
@@ -158,4 +158,4 @@ Site.prototype = {
   }
 }
 
-new Site()
+new HoneySite()
