@@ -57,7 +57,7 @@ var HoneyNav = function() {
   // $(window).on('mousewheel', this.mouseWheel.bind(this))
   
   $(window).on('scrolldown', debounce( 100, true, function(event) {
-    if($('body').hasClass('at-top')) {
+    if(HoneySize.isBig() && $('body').hasClass('at-top')) {
       this.pageDown()
     }
   }.bind(this) ) )
