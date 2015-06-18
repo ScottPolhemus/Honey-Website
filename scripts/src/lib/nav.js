@@ -43,29 +43,44 @@ var HoneyNav = function() {
 
   this.scrolling = false
 
-  // $(window).on('scrolldown', debounce( 100, true, function(event) {
-  //   if(Site.isBig() && !this.scrolling) {
-  //     this.pageDown()
-  //   }
-  // }.bind(this) ) )
+  $(window).on('scrolldown', debounce( 100, true, function(event) {
+    if(Site.isBig() && !this.scrolling && $('.page-section.active').first().outerHeight() <= window.innerHeight) {
+      this.pageDown()
 
-  // $(window).on('scrollup', debounce( 100, true, function(event) {
-  //   if(Site.isBig() && !this.scrolling) {
-  //     this.pageUp()
-  //   }
-  // }.bind(this) ) )
+      $(window).off('mousewheel').on('mousewheel', function(e) {
+        e.preventDefault();
+      })
+    }
+  }.bind(this) ) )
 
-  // $(window).on('mousewheel', function(event) {
-  //   if(Site.isBig() && this.scrolling) {
-  //     event.preventDefault();
-  //   }
-  // }.bind(this))
+  $(window).on('scrollup', debounce( 100, true, function(event) {
+    if(Site.isBig() && !this.scrolling && $('.page-section.active').first().outerHeight() <= window.innerHeight) {
+      this.pageUp()
 
-  // $(window).on('scrollstop', function() {
-  //   if(Site.isBig() && !this.scrolling) {
-  //     this.scrollTo($('.page-section.active').first()[0])
-  //   }
-  // }.bind(this) )
+      $(window).off('mousewheel').on('mousewheel', function(e) {
+        e.preventDefault();
+      })
+    }
+  }.bind(this) ) )
+
+  $(window).on('mousewheel', this.mouseWheel.bind(this))
+
+  $(window).on('scrollstop', debounce( 100, true, function() {
+    if(Site.isBig() && !this.scrolling) {
+      console.log('yo')
+
+      var $active = $('.page-section.active').first()
+      var top = $active.offset().top
+      var bottom = top + $active.outerHeight()
+
+      var scrollTop = window.scrollY
+      var scrollBottom = scrollTop + window.innerHeight
+
+      if((scrollTop < top || scrollBottom > bottom)) {
+        this.scrollTo($('.page-section.active').first()[0])
+      }
+    }
+  }.bind(this) ) )
 }
 
 HoneyNav.prototype = {
@@ -176,7 +191,7 @@ HoneyNav.prototype = {
   },
 
   scrollTo: function(el) {
-    this.$targets.velocity('stop')
+    this.stopScroll()
 
     this.scrolling = true
 
@@ -186,7 +201,7 @@ HoneyNav.prototype = {
       offset: function() {
         var offset = (window.innerHeight - el.offsetHeight) * -1
 
-        if(offset >= window.innerHeight) {
+        if(offset >= window.innerHeight || (el.offsetHeight > window.innerHeight)) {
           return 0
         } else {
           return offset
@@ -194,8 +209,21 @@ HoneyNav.prototype = {
       }(),
       complete: function() {
         this.scrolling = false
+
+        $(window).off('mousewheel').on('mousewheel', this.mouseWheel.bind(this))
       }.bind(this)
     })
+  },
+
+  stopScroll: function() {
+    this.$targets.velocity('stop')
+    this.scrolling = false
+  },
+
+  mouseWheel: function() {
+    if(this.scrolling) {
+      this.stopScroll()
+    }
   },
 
   pageDown: function() {
