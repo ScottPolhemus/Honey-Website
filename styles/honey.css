@@ -217,6 +217,15 @@ header.top-nav {
     background-image: url("../assets/images/svg/honeylogo.svg"); }
     .at-top header.top-nav .logo a {
       cursor: default; }
+  header.top-nav:before {
+    -webkit-transition: opacity 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+            transition: opacity 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+  header.top-nav nav {
+    -webkit-transition: opacity 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+            transition: opacity 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+  header.top-nav .logo {
+    -webkit-transition: 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
+            transition: 250ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
 
 .indicators {
   position: fixed;
@@ -242,6 +251,8 @@ header.top-nav {
         fill: rgba(155, 155, 155, 0.25);
         -webkit-transition: fill 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95);
                 transition: fill 500ms cubic-bezier(0.55, 0.1, 0.25, 0.95); }
+      .indicators li > a:hover .indicator-dot {
+        fill: #6e6e6e; }
     .indicators li.active {
       font-weight: bold; }
       .indicators li.active > a .indicator-dot {
@@ -375,7 +386,8 @@ section.features-section h2 {
   margin-bottom: 40px; }
 
 section.features-section .content {
-  position: relative; }
+  position: relative;
+  padding: 100px 0; }
   @media (max-width: 699px), (max-height: 499px) {
     section.features-section .content {
       padding: 75px 0 0; } }
@@ -460,7 +472,7 @@ section.features-section .features-phone {
       opacity: 1; }
 
 section.about-section .content {
-  padding: 25px 0; }
+  padding: 100px 0; }
   @media (max-width: 699px), (max-height: 499px) {
     section.about-section .content {
       padding: 100px 25px 0; } }
