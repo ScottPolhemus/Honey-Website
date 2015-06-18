@@ -36,6 +36,16 @@ section.page-section {
 }
 
 section.page-multi-section {
+
+  .content{
+    padding:0 25px;
+    width:85%;
+
+    @include small{
+      width:100%;
+    }
+  }
+
   @include big {
     position: relative;
     height: 300%;
@@ -228,7 +238,7 @@ section.features-section {
 
         h3{
           &:after{
-            content:url('../assets/images/line-R.svg');
+            content:url('../assets/images/line-L.svg');
             position:absolute;
             right:-15%;
             top:-4px;
@@ -268,7 +278,7 @@ section.features-section {
 
           h3{
             &:after{
-              content:url('../assets/images/line-L.svg');
+              content:url('../assets/images/line-R.svg');
               left:-15%;
             }
           }
@@ -333,13 +343,6 @@ section.about-section{
 
         img{
           margin-bottom:15px;
-        }
-
-        h4{
-          .cred{
-            display:inline-block;
-            color:$honey-teal;
-          }
         }
 
         &.michal{
