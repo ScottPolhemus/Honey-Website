@@ -130,7 +130,7 @@ section.feed-section{
 
         .cycle-shuffle-button{
           border:none;
-          background-color:white;
+          background-color:transparent;
           font-size:20px;
           color:$honey-teal;
           margin:10px 0 0;
@@ -202,6 +202,10 @@ section.features-section {
 
     p {
       @extend p.small;
+      
+      @include small{
+        max-width:75%;
+      }
     }
 
     .features-content-item {
@@ -213,17 +217,70 @@ section.features-section {
         padding-right: 20px;
         width: (100% / 3);
         cursor: pointer;
-        opacity: .3;
         margin: 15px 0;
+        // transition:500ms $honey-easing;
+
+        h3,p{
+          opacity:.3;
+          transition:500ms $honey-easing;
+          position:relative;
+        }
+
+        h3{
+          &:after{
+            content:url('../assets/images/line-R.svg');
+            position:absolute;
+            right:-15%;
+            top:-4px;
+            opacity:0;
+            transition:500ms $honey-easing;
+
+            @media (max-width:1060px){
+              display:none;
+            }
+          }
+        }
+
+
+        &:hover{
+          h3,p{
+            opacity:1;
+          }
+        }
 
         &.active {
-          opacity: 1;
+          h3,p{
+            opacity: 1;
+          }
+
+          h3{
+            &:after{
+              right:-19.5%;
+              opacity:1;
+            }
+          }
         }
 
         &:nth-child(odd) {
           float: right;
           clear: right;
           text-align: left;
+
+          h3{
+            &:after{
+              content:url('../assets/images/line-L.svg');
+              left:-15%;
+            }
+          }
+
+          &.active {
+            h3{
+              &:after{
+                left:-19.5%;
+                opacity:1;
+              }
+            }
+          }
         }
       }
 
@@ -236,6 +293,17 @@ section.features-section {
   .features-phone {
     margin: auto;
     max-width: 250px;
+
+    .features-phone-screenshot {
+      opacity:0;
+      // transform:translate3d(100px, 0, 0);
+      transition: 500ms $honey-easing;
+
+      &.active {
+        opacity:1;
+        // transform:translate3d(0, 0, 0);
+      }
+    }
   }
 }
 
