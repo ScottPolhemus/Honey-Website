@@ -5,6 +5,7 @@ require('flickity-imagesloaded')
 var HoneyNav = require('./lib/nav')
 var HoneyPhone = require('./lib/phone')
 var HoneyCycle = require('./lib/cycle')
+var HoneySize = require('./lib/size')
 
 var HoneySite = function() {
   this.loadImages()
@@ -79,7 +80,7 @@ var HoneySite = function() {
   var $featureImages = $('.features-phone-screenshot')
 
   $featureItems.on('click', function(event) {
-    if(this.isBig()) {
+    if(HoneySize.isBig()) {
       var $item = $(event.currentTarget);
       
       $item.addClass('active').siblings().removeClass('active')
@@ -105,27 +106,10 @@ var HoneySite = function() {
   })
 
   $(window).resize()
+  $(window).scroll()
 }
 
 HoneySite.prototype = {
-  isSmall: function() {
-    var ww = window.innerWidth
-    var wh = window.innerHeight
-
-    return (ww < 700 || wh < 500)
-  },
-
-  isBig: function() {
-    var ww = window.innerWidth
-    var wh = window.innerHeight
-
-    return (ww >= 700 && wh >= 500)
-  },
-
-  getSize: function() {
-    return this.isSmall ? 'small' : 'big';
-  },
-
   checkHeader: function() {
     this.$body.toggleClass('at-top', window.scrollY <= 50)
   },
@@ -159,4 +143,4 @@ HoneySite.prototype = {
   }
 }
 
-window.Site = new HoneySite()
+new HoneySite()

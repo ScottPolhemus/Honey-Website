@@ -3,8 +3,9 @@ require('../vendor/jquery.propascroll.js');
 
 var debounce = require('throttle-debounce').debounce;
 
-
 var Velocity = require('velocity')
+
+var HoneySize = require('./size.js')
 
 var HoneyNav = function() {
   this.el = document.querySelector('.indicators')
@@ -43,41 +44,52 @@ var HoneyNav = function() {
 
   this.scrolling = false
 
+  // $(window).on('scrollup', debounce( 100, true, function(event) {
+  //   if(HoneySize.isBig() && !this.scrolling && $('.page-section.active').first().outerHeight() <= window.innerHeight) {
+  //     this.pageUp()
+
+  //     $(window).off('mousewheel').on('mousewheel', function(e) {
+  //       e.preventDefault();
+  //     })
+  //   }
+  // }.bind(this) ) )
+
+  // $(window).on('mousewheel', this.mouseWheel.bind(this))
+  
   $(window).on('scrolldown', debounce( 100, true, function(event) {
-    if(Site.isBig() && !this.scrolling && $('.page-section.active').first().outerHeight() <= window.innerHeight) {
+    if($('body').hasClass('at-top')) {
       this.pageDown()
-
-      $(window).off('mousewheel').on('mousewheel', function(e) {
-        e.preventDefault();
-      })
     }
   }.bind(this) ) )
-
-  $(window).on('scrollup', debounce( 100, true, function(event) {
-    if(Site.isBig() && !this.scrolling && $('.page-section.active').first().outerHeight() <= window.innerHeight) {
-      this.pageUp()
-
-      $(window).off('mousewheel').on('mousewheel', function(e) {
-        e.preventDefault();
-      })
-    }
-  }.bind(this) ) )
-
-  $(window).on('mousewheel', this.mouseWheel.bind(this))
 
   $(window).on('scrollstop', debounce( 100, true, function() {
-    if(Site.isBig() && !this.scrolling) {
-      console.log('yo')
+    if(HoneySize.isBig() && !this.scrolling) {
 
       var $active = $('.page-section.active').first()
+
+      if(!$active.length) {
+        return;
+      }
+
       var top = $active.offset().top
       var bottom = top + $active.outerHeight()
 
       var scrollTop = window.scrollY
       var scrollBottom = scrollTop + window.innerHeight
 
+      console.log({
+        top: top,
+        bottom: bottom,
+        scrollTop: scrollTop,
+        scrollBottom: scrollBottom
+      })
+
       if((scrollTop < top || scrollBottom > bottom)) {
-        this.scrollTo($('.page-section.active').first()[0])
+        if(scrollTop - top >= ($active.outerHeight() / 3)) {
+          this.pageDown()
+        } else {
+          this.scrollTo($('.page-section.active').first()[0])
+        }
       }
     }
   }.bind(this) ) )
@@ -204,7 +216,7 @@ HoneyNav.prototype = {
         if(offset >= window.innerHeight || (el.offsetHeight > window.innerHeight)) {
           return 0
         } else {
-          return offset
+          return Math.floor(offset)
         }
       }(),
       complete: function() {
