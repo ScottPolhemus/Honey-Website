@@ -5,6 +5,7 @@ var livereload = require('gulp-livereload')
 
 var browserify = require('browserify')
 var shim = require('browserify-shim')
+var bower = require('debowerify')
 var watchify = require('watchify')
 
 var source = require('vinyl-source-stream')
@@ -21,7 +22,7 @@ var config = {
       entries: './scripts/src/honey.js',
       dest: './scripts',
       outputName: 'honey.js',
-      transform: [shim],
+      transform: [shim, bower],
       debug: true
     }
   ]
@@ -67,8 +68,6 @@ var browserifyTask = function(devMode) {
     }
     
     var b = browserify(bundleConfig)
-
-    b.plugin('browserify-bower')
 
     var bundle = function() {
       // Log when bundling starts

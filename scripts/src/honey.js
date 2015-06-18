@@ -9,6 +9,7 @@ var HoneyCycle = require('./lib/cycle')
 var HoneySite = function() {
   this.loadImages()
 
+  this.$html = $('html')
   this.$body = $('body')
   this.nav = new HoneyNav()
   this.phone = new HoneyPhone()
@@ -158,4 +159,4 @@ HoneySite.prototype = {
   }
 }
 
-new HoneySite()
+window.Site = new HoneySite()

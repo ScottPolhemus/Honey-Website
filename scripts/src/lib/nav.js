@@ -1,5 +1,8 @@
 var $ = require('jquery')
-require('jquery-mousewheel')($)
+require('../vendor/jquery.propascroll.js');
+
+var debounce = require('throttle-debounce').debounce;
+
 
 var Velocity = require('velocity')
 
@@ -37,6 +40,32 @@ var HoneyNav = function() {
 
     event.preventDefault()
   }.bind(this))
+
+  this.scrolling = false
+
+  // $(window).on('scrolldown', debounce( 100, true, function(event) {
+  //   if(Site.isBig() && !this.scrolling) {
+  //     this.pageDown()
+  //   }
+  // }.bind(this) ) )
+
+  // $(window).on('scrollup', debounce( 100, true, function(event) {
+  //   if(Site.isBig() && !this.scrolling) {
+  //     this.pageUp()
+  //   }
+  // }.bind(this) ) )
+
+  // $(window).on('mousewheel', function(event) {
+  //   if(Site.isBig() && this.scrolling) {
+  //     event.preventDefault();
+  //   }
+  // }.bind(this))
+
+  // $(window).on('scrollstop', function() {
+  //   if(Site.isBig() && !this.scrolling) {
+  //     this.scrollTo($('.page-section.active').first()[0])
+  //   }
+  // }.bind(this) )
 }
 
 HoneyNav.prototype = {
@@ -118,11 +147,17 @@ HoneyNav.prototype = {
     }
 
     var atHome = (window.scrollY < window.innerHeight)
-
     var pastMulti = (window.scrollY > this.targets.feed.offsetTop + window.innerHeight)
 
     $('body').toggleClass('at-home', atHome)
     $('body').toggleClass('past-multi', pastMulti)
+
+    var atFooter = (window.scrollY + window.innerHeight >= this.footer.offsetTop + (this.footer.offsetHeight / 2))
+
+    if(atFooter) {
+      active = []
+      activeItems = []
+    }
 
     $(active).add(activeItems).addClass('active')
 
@@ -143,6 +178,8 @@ HoneyNav.prototype = {
   scrollTo: function(el) {
     this.$targets.velocity('stop')
 
+    this.scrolling = true
+
     Velocity(el, 'scroll', {
       duration: 600,
       easing: this.easing,
@@ -154,7 +191,10 @@ HoneyNav.prototype = {
         } else {
           return offset
         }
-      }()
+      }(),
+      complete: function() {
+        this.scrolling = false
+      }.bind(this)
     })
   },
 
@@ -162,9 +202,7 @@ HoneyNav.prototype = {
     var $activeItem = this.$items.filter('.active').last();
     var $next = $();
 
-    if(!$activeItem.length) {
-      $next = this.$items.first()
-    } else {
+    if($activeItem.length) {
       $next = $activeItem.next('li')
 
       if(!$next.length) {

@@ -6,6 +6,7 @@
   ],
   "dependencies": {
     "velocity": "~1.2.2",
-    "jquery-mousewheel": "~3.1.12"
+    "jquery-mousewheel": "~3.1.12",
+    "jQuery.scrollSections": "guins/jQuery.scrollSections"
   }
 }

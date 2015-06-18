@@ -46,7 +46,7 @@ HoneyPhone.prototype = {
     var offsetY = -50 * this.progress
 
     // Build the transform string
-    this.transform = 'translateX('+distanceX+'px) translateY('+distanceY+'px) scale('+scale+') translateY('+offsetY+'%)'
+    this.transform = 'translate3d('+distanceX+'px, '+distanceY+'px,0) scale('+scale+') translateY('+offsetY+'%)'
 
     this.$el.css('transform', this.transform)
   }
