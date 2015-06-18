@@ -93,7 +93,8 @@
     right: 0;
     width: (100% / 3);
     height: auto;
-    z-index: 1;
+    opacity:0;
+    transition: opacity 750ms $honey-easing;
 
     .past-multi & {
       position: absolute;
@@ -104,7 +105,7 @@
   }
 
   .page-section.active & {
-    z-index: 2;
+    opacity:1;
   }
 }
 
@@ -130,6 +131,7 @@
     max-width: 200px;
     margin: auto;
     z-index: 100;
+    // opacity:0;
 
     .past-multi & {
       position: absolute;
@@ -142,6 +144,7 @@
 
     .page-section.active & {
       z-index: 101;
+      // opacity:1;
     }
 
     .phone-frame {
