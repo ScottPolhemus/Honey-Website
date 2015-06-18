@@ -98,6 +98,19 @@ header.top-nav {
       }
     }
   }
+
+  &:before{
+    transition: opacity 250ms $honey-easing;
+
+  }
+
+  nav{
+    transition: opacity 250ms $honey-easing;
+  }
+
+  .logo{
+    transition: 250ms $honey-easing;
+  }
 }
 
 .indicators {
@@ -129,6 +142,10 @@ header.top-nav {
       .indicator-dot {
         fill: fade-out(#9B9B9B, .75);
         transition: fill 500ms $honey-easing;
+      }
+
+      &:hover .indicator-dot{
+        fill: darken($gray-light,50%);
       }
     }
 

@@ -169,6 +169,7 @@ section.features-section {
 
   .content{
     position:relative;
+    padding: 100px 0;
 
     @include small{
       padding:75px 0 0;
@@ -319,7 +320,7 @@ section.features-section {
 
 section.about-section{
   .content{
-    padding:25px 0;
+    padding:100px 0;
 
     @include small{
       padding:100px 25px 0;
