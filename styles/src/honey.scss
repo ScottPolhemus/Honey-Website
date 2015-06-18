@@ -1,9 +1,9 @@
 @import "reset";
 @import "variables";
 @import "type";
-@import "flickity";
-@import "sections";
 @import "nav";
+@import "sections";
+@import "flickity";
 @import "sliders";
 @import "images";
 
@@ -20,5 +20,7 @@ html, body, main {
 html {
   text-align: center;
   // background: lighten(black, 50%);
-  // overflow: hidden;
+  // @include big {
+  //   overflow: hidden;
+  // }
 }
