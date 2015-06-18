@@ -192,10 +192,14 @@ section.features-section {
     margin: auto;
     overflow: hidden;
 
-    position: absolute;
-    top: 50%;
-    left: 0; right: 0;
-    transform: translateY(-50%);
+    @include big {
+
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      transform: translateY(-50%);
+
+    }
 
     &:after {
       display: none;
