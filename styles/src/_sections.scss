@@ -92,15 +92,19 @@ section.intro-section {
     background: $honey-orange;
     border-radius: 10px;
     padding: 20px 25px 22px;
-    // overflow:auto;
-    cursor:pointer;
+    // cursor:pointer;
     transition:.25s ease;
 
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    font-weight:500;
+
     &:hover{
-      background:darken($honey-orange, 5%);
+      // background:darken($honey-orange, 5%);
       // padding: 20px 30px 22px;
       // transform: translateY(-10px);
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+      // box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
     }
 
     img{
