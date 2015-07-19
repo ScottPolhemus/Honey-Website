@@ -922,6 +922,9 @@ body.at-home .phone-frame-wrapper .phone-frame .phone-screen img {
     -webkit-transform: translateX(50%) translateY(-50%);
         -ms-transform: translateX(50%) translateY(-50%);
             transform: translateX(50%) translateY(-50%); }
+    .in-multi .phone-frame-wrapper .phone-frame,
+    .past-multi .phone-frame-wrapper .phone-frame {
+      visibility: hidden; }
   .phone-frame-wrapper .phone-frame {
     top: 100%;
     -webkit-transform: translateX(50%) translateY(-140px);
@@ -999,8 +1002,7 @@ body.at-home .phone-frame-wrapper .phone-frame .phone-screen img {
         width: 100%;
         -webkit-transform: translateX(50%) translateY(-50%);
             -ms-transform: translateX(50%) translateY(-50%);
-                transform: translateX(50%) translateY(-50%);
-        background: none; } }
+                transform: translateX(50%) translateY(-50%); } }
 
 .founders .half img {
   width: 140px; }
