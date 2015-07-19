@@ -77,13 +77,6 @@ var HoneyNav = function() {
       var scrollTop = window.scrollY
       var scrollBottom = scrollTop + window.innerHeight
 
-      console.log({
-        top: top,
-        bottom: bottom,
-        scrollTop: scrollTop,
-        scrollBottom: scrollBottom
-      })
-
       if((scrollTop < top || scrollBottom > bottom)) {
         if(scrollTop - top >= ($active.outerHeight() / 3)) {
           this.pageDown()
@@ -174,9 +167,11 @@ HoneyNav.prototype = {
     }
 
     var atHome = (window.scrollY < window.innerHeight)
-    var pastMulti = (window.scrollY > this.targets.feed.offsetTop + window.innerHeight)
+    var pastMulti = (window.scrollY > this.targets.features.offsetTop - window.innerHeight)
+    var inMulti = (!atHome && !pastMulti);
 
     $('body').toggleClass('at-home', atHome)
+    $('body').toggleClass('in-multi', inMulti)
     $('body').toggleClass('past-multi', pastMulti)
 
     var atFooter = (window.scrollY + window.innerHeight >= this.footer.offsetTop + (this.footer.offsetHeight / 2))
