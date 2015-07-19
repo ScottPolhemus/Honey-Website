@@ -106,6 +106,8 @@ h5 {
   font-size: 16px;
   line-height: 22px;
   font-weight: 100; }
+  h5 a {
+    color: white; }
 
 p {
   max-width: 600px;
@@ -334,12 +336,12 @@ section.intro-section {
     background: #F69523;
     border-radius: 10px;
     padding: 20px 25px 22px;
-    cursor: pointer;
     -webkit-transition: .25s ease;
-            transition: .25s ease; }
-    section.intro-section .app-store-link:hover {
-      background: #f5890b;
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); }
+            transition: .25s ease;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500; }
     section.intro-section .app-store-link img {
       max-width: 150px;
       vertical-align: middle; }
