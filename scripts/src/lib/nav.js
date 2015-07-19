@@ -168,7 +168,7 @@ HoneyNav.prototype = {
 
     var atHome = (window.scrollY < window.innerHeight)
     var pastMulti = (window.scrollY > this.targets.features.offsetTop - window.innerHeight)
-    var inMulti = (!atHome && !pastMulti);
+    var inMulti = (window.scrollY + 2 > this.targets['how-it-works'].offsetTop);
 
     $('body').toggleClass('at-home', atHome)
     $('body').toggleClass('in-multi', inMulti)

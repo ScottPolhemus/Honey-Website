@@ -161,8 +161,15 @@ body.at-home{
       // transition-delay:0;
     }
 
-    .at-home & {
-      opacity: 0 !important;
+    // .at-home & {
+    //   opacity: 0 !important;
+    // }
+
+    visibility: hidden;
+
+    .in-multi &,
+    .past-multi & {
+      visibility: visible;
     }
 
     .page-section.active & {

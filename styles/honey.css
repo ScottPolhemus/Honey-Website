@@ -986,15 +986,17 @@ body.at-home .phone-frame-wrapper .phone-frame .phone-screen img {
       width: 33.33333%;
       max-width: 200px;
       margin: auto;
-      z-index: 100; }
+      z-index: 100;
+      visibility: hidden; }
       .past-multi .section-screenshot {
         position: absolute;
         width: 200px;
         right: 0;
         opacity: 1;
         z-index: 101; }
-      .at-home .section-screenshot {
-        opacity: 0 !important; }
+      .in-multi .section-screenshot,
+      .past-multi .section-screenshot {
+        visibility: visible; }
       .page-section.active .section-screenshot {
         z-index: 101; }
       .section-screenshot .phone-frame {
