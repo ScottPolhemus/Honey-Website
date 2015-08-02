@@ -150,10 +150,10 @@ http://flickity.metafizzy.co
   opacity: 1;
 }
 
-
 /*Features Arrows*/
 
-section.features-section{
+section.features-section,
+.dietitian-slider-photos {
 
   .flickity-prev-next-button {
     position: absolute;
@@ -221,5 +221,31 @@ section.features-section{
 
   .flickity-prev-next-button .arrow {
     fill: #333;
+  }
+}
+
+/*Slider Arrows*/
+
+.profile-slider-icons,
+.dietitian-slider-photos {
+  .flickity-prev-next-button {
+    &.previous {
+      left: auto;
+      right: 100%;
+      margin-right: -15px;
+    }
+    &.next {
+      right: auto;
+      left: 100%;
+      margin-left: -15px;
+    }
+  } 
+}
+
+.dietitian-slider-photos {
+  @include big {
+    .flickity-prev-next-button {
+      display: none;
+    }
   }
 }

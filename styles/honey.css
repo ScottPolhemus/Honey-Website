@@ -734,9 +734,11 @@ http://flickity.metafizzy.co
   opacity: 1; }
 
 /*Features Arrows*/
-section.features-section {
+section.features-section,
+.dietitian-slider-photos {
   /* right to left */ }
-  section.features-section .flickity-prev-next-button {
+  section.features-section .flickity-prev-next-button,
+  .dietitian-slider-photos .flickity-prev-next-button {
     position: absolute;
     top: 50%;
     width: 40px;
@@ -748,38 +750,65 @@ section.features-section {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-  section.features-section .flickity-prev-next-button:hover svg {
+  section.features-section .flickity-prev-next-button:hover svg,
+  .dietitian-slider-photos .flickity-prev-next-button:hover svg {
     opacity: 0.5; }
-  section.features-section .flickity-prev-next-button:focus {
+  section.features-section .flickity-prev-next-button:focus,
+  .dietitian-slider-photos .flickity-prev-next-button:focus {
     outline: none; }
-  section.features-section .flickity-prev-next-button:active svg {
+  section.features-section .flickity-prev-next-button:active svg,
+  .dietitian-slider-photos .flickity-prev-next-button:active svg {
     opacity: 1; }
-  section.features-section .flickity-prev-next-button.previous {
+  section.features-section .flickity-prev-next-button.previous,
+  .dietitian-slider-photos .flickity-prev-next-button.previous {
     left: 0;
     border-right-width: 1px; }
-  section.features-section .flickity-prev-next-button.next {
+  section.features-section .flickity-prev-next-button.next,
+  .dietitian-slider-photos .flickity-prev-next-button.next {
     right: 0;
     border-left-width: 1px; }
-  section.features-section .flickity-rtl .flickity-prev-next-button.previous {
+  section.features-section .flickity-rtl .flickity-prev-next-button.previous,
+  .dietitian-slider-photos .flickity-rtl .flickity-prev-next-button.previous {
     left: auto;
     right: 10px; }
-  section.features-section .flickity-rtl .flickity-prev-next-button.next {
+  section.features-section .flickity-rtl .flickity-prev-next-button.next,
+  .dietitian-slider-photos .flickity-rtl .flickity-prev-next-button.next {
     right: auto;
     left: 10px; }
-  section.features-section .flickity-prev-next-button:disabled {
+  section.features-section .flickity-prev-next-button:disabled,
+  .dietitian-slider-photos .flickity-prev-next-button:disabled {
     filter: alpha(opacity=30);
     /* IE8 */
     opacity: 0.3;
     cursor: auto; }
-  section.features-section .flickity-prev-next-button svg {
+  section.features-section .flickity-prev-next-button svg,
+  .dietitian-slider-photos .flickity-prev-next-button svg {
     position: absolute;
     left: 20%;
     top: 20%;
     width: 60%;
     height: 60%;
     opacity: 0.25; }
-  section.features-section .flickity-prev-next-button .arrow {
+  section.features-section .flickity-prev-next-button .arrow,
+  .dietitian-slider-photos .flickity-prev-next-button .arrow {
     fill: #333; }
+
+/*Slider Arrows*/
+.profile-slider-icons .flickity-prev-next-button.previous,
+.dietitian-slider-photos .flickity-prev-next-button.previous {
+  left: auto;
+  right: 100%;
+  margin-right: -15px; }
+
+.profile-slider-icons .flickity-prev-next-button.next,
+.dietitian-slider-photos .flickity-prev-next-button.next {
+  right: auto;
+  left: 100%;
+  margin-left: -15px; }
+
+@media (min-width: 700px) and (min-height: 500px) {
+  .dietitian-slider-photos .flickity-prev-next-button {
+    display: none; } }
 
 .profile-slider-icons,
 .dietitian-slider-photos {

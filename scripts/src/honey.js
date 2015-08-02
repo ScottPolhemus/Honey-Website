@@ -45,7 +45,7 @@ var HoneySite = function() {
   var dietitianSlider = new Flickity($sliderPhotos[0], {
     cellSelector: '.slider-item',
     pageDots: false,
-    prevNextButtons: false,
+    prevNextButtons: true,
     contain: true,
     draggable: false,
     imagesLoaded: true
