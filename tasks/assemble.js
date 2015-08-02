@@ -16,6 +16,7 @@ var beautifyOpts = {
 
 gulp.task('assemble', function() {
   assemble.partials('./templates/partials/*.hbs')
+  assemble.data('./package.json');
   
   assemble.postRender(/\.html/, function(file, next) {
     file.content = beautify(file.content, beautifyOpts)
