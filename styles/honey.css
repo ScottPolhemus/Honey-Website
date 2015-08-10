@@ -921,9 +921,6 @@ section.features-section,
     .phone-frame .phone-screen img {
       width: 100%; }
 
-body.at-home .phone-frame-wrapper .phone-frame .phone-screen img {
-  opacity: 1; }
-
 .phone-frame-wrapper {
   position: fixed;
   top: 0;
@@ -935,8 +932,6 @@ body.at-home .phone-frame-wrapper .phone-frame .phone-screen img {
   pointer-events: none;
   right: 50%;
   width: 350px; }
-  .phone-frame-wrapper img {
-    opacity: 0; }
   .past-multi .phone-frame-wrapper {
     position: absolute;
     -webkit-transform: translateY(300%);

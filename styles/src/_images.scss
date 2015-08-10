@@ -28,14 +28,6 @@
   }
 }
 
-body.at-home{
-  .phone-frame-wrapper .phone-frame .phone-screen{
-    img{
-      opacity:1;
-    }
-  }
-}
-
 .phone-frame-wrapper {
   position: fixed;
   top: 0;
@@ -45,10 +37,6 @@ body.at-home{
   margin: auto;
   z-index: 101;
   pointer-events: none;
-
-  img{
-    opacity:0;
-  }
 
   .past-multi & {
     position: absolute;
