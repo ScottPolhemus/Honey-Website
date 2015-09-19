@@ -48,6 +48,143 @@ table {
 * {
   outline: none; }
 
+.profile-page p {
+  font-size: 16px;
+  line-height: 25px; }
+
+.info {
+  width: 100%;
+  padding: 130px 0 65px;
+  max-width: 1125px;
+  display: inline-block; }
+  .info span.line {
+    background-color: rgba(51, 51, 51, 0.25);
+    height: 1px;
+    margin: 25px auto;
+    display: block; }
+  .info .profile {
+    width: 35%;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    padding: 0 50px; }
+    .info .profile span.line {
+      width: 45px; }
+    .info .profile h2 {
+      color: #F69523;
+      font-size: 35px;
+      margin-bottom: 10px; }
+    .info .profile .profile-photo {
+      max-width: 215px;
+      background-size: cover;
+      margin: 0 auto;
+      height: 215px;
+      overflow: hidden; }
+      .info .profile .profile-photo .overlay img {
+        width: 215px; }
+  .info a {
+    text-decoration: none;
+    -webkit-transition: .5s ease;
+            transition: .5s ease;
+    color: #01A6AF; }
+    .info a p {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 15px; }
+      .info a p span {
+        margin-left: 5px;
+        -webkit-transition: margin 0.25s ease;
+                transition: margin 0.25s ease; }
+    .info a:hover {
+      color: #01767c; }
+      .info a:hover p span {
+        margin-left: 10px; }
+  .info .about {
+    width: 65%;
+    float: right;
+    text-align: left;
+    display: inline-block;
+    padding: 15px 50px 0; }
+    .info .about span.line {
+      width: 100%; }
+    .info .about h4 {
+      color: rgba(51, 51, 51, 0.5);
+      margin-bottom: 10px; }
+    .info .about p {
+      max-width: 100%; }
+    .info .about .expertise .tags li {
+      text-align: center;
+      display: inline-block;
+      margin: 10px 20px 0 0; }
+      .info .about .expertise .tags li img {
+        width: 65px; }
+      .info .about .expertise .tags li h4 {
+        margin-top: 10px;
+        color: #F69523; }
+
+.posts {
+  background-color: #F4F4F4;
+  width: 100%;
+  padding: 10px 0;
+  overflow: auto; }
+  .posts .post-container {
+    max-width: 1280px;
+    margin: 0 auto; }
+    .posts .post-container .posts-info {
+      display: inline-block;
+      width: 100%;
+      padding: 25px 0; }
+      .posts .post-container .posts-info .title {
+        float: left; }
+      .posts .post-container .posts-info .stats {
+        float: right; }
+    .posts .post-container .grid {
+      width: 100%;
+      padding: 0 0 25px 0;
+      text-align: justify;
+      position: relative; }
+      .posts .post-container .grid .grid-item {
+        width: 23%;
+        margin: 0 0 2%;
+        position: relative;
+        vertical-align: top;
+        background: white;
+        display: inline-block;
+        border-radius: 10px; }
+        .posts .post-container .grid .grid-item span.bar {
+          height: 3px;
+          width: 100%;
+          background-color: #F69523;
+          position: absolute;
+          top: 0;
+          display: inline-block;
+          border-radius: 10px 10px 0 0; }
+        .posts .post-container .grid .grid-item .post-title {
+          padding: 14px 15px 10px;
+          display: inline-block;
+          width: 100%; }
+          .posts .post-container .grid .grid-item .post-title p {
+            color: #F69523;
+            float: left;
+            font-weight: 500; }
+          .posts .post-container .grid .grid-item .post-title h4 {
+            color: rgba(51, 51, 51, 0.25);
+            float: right;
+            margin-top: 5px; }
+        .posts .post-container .grid .grid-item .post-img {
+          display: inline-block; }
+          .posts .post-container .grid .grid-item .post-img img {
+            width: 100%; }
+        .posts .post-container .grid .grid-item .caption {
+          margin: 15px; }
+          .posts .post-container .grid .grid-item .caption p {
+            text-align: left;
+            font-size: 13px;
+            line-height: 19px;
+            font-weight: 500px; }
+        .posts .post-container .grid .grid-item.filler {
+          height: 0; }
+
 html {
   font-family: 'Open Sans', sans-serif;
   color: #333333; }
@@ -617,69 +754,6 @@ footer.bottom {
   background: #F69523;
   background: -webkit-linear-gradient(left, #FDB73B, #F59121);
   background: linear-gradient(to right, #FDB73B, #F59121); }
-
-.info {
-  width: 100%;
-  padding: 130px 0 65px;
-  max-width: 1125px;
-  display: inline-block; }
-  .info span.line {
-    background-color: rgba(51, 51, 51, 0.25);
-    height: 1px;
-    margin: 25px auto;
-    display: block; }
-  .info .profile {
-    width: 35%;
-    text-align: center;
-    display: inline-block;
-    float: left;
-    padding: 0 50px; }
-    .info .profile span.line {
-      width: 45px; }
-    .info .profile h2 {
-      color: #F69523;
-      font-size: 35px;
-      margin-bottom: 10px; }
-    .info .profile a {
-      text-decoration: none;
-      -webkit-transition: .5s ease;
-              transition: .5s ease;
-      color: #01A6AF; }
-      .info .profile a p {
-        font-size: 16px;
-        font-weight: 500;
-        margin-top: 15px; }
-        .info .profile a p span {
-          margin-left: 5px;
-          -webkit-transition: .25s ease;
-                  transition: .25s ease; }
-      .info .profile a:hover {
-        color: #01767c; }
-        .info .profile a:hover p span {
-          margin-left: 10px; }
-    .info .profile .profile-photo {
-      max-width: 215px;
-      background-size: cover;
-      margin: 0 auto;
-      height: 215px;
-      overflow: hidden; }
-      .info .profile .profile-photo .overlay img {
-        width: 215px; }
-  .info .bio {
-    width: 65%;
-    float: right;
-    text-align: left;
-    display: inline-block;
-    padding: 15px 50px 0; }
-    .info .bio span.line {
-      width: 100%; }
-    .info .bio h4 {
-      color: rgba(51, 51, 51, 0.5);
-      margin-bottom: 10px; }
-    .info .bio p {
-      max-width: 100%;
-      font-size: 16px;
-      line-height: 25px; }
 
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co

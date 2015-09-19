@@ -1,3 +1,10 @@
+.profile-page{
+	p{
+		font-size: 16px;
+    	line-height: 25px;
+	}
+}
+
 .info{
 	width:100%;
 	padding:130px 0 65px;
@@ -28,46 +35,6 @@
 			margin-bottom:10px;
 		}
 
-		a {
-			text-decoration:none;
-			 transition:.5s ease;
-			 color:$honey-teal;
-
-			p{
-				font-size: 16px;
-				font-weight:500;
-				margin-top:15px;
-
-				span{
-					margin-left:5px;
-					 transition:.25s ease;
-				}
-				// position:relative;
-				// display:inline-block;
-
-				// &:after{
-				// 	content: "\f178";
-				// 	display:inline-block;
-				// 	font-size:16px;
-				// 	color:$honey-teal;
-				// 	position: absolute;
-				// 	right:-25px;
-				// 	font-family: 'FontAwesome';
-				// }
-			}
-
-			&:hover{
-				color: darken($honey-teal,10%); 	
-
-				p{
-					span{
-						margin-left:10px;
-					}
-				}
-				
-			}
-		}
-
 		.profile-photo{
 			max-width:215px;
 			background-size:cover;
@@ -83,7 +50,35 @@
 		}
 	}
 
-	.bio{
+a {
+	text-decoration:none;
+	 transition:.5s ease;
+	 color:$honey-teal;
+
+	p{
+		font-size: 16px;
+		font-weight:500;
+		margin-top:15px;
+
+		span{
+			margin-left:5px;
+			transition:margin .25s ease;
+		}
+	}
+
+	&:hover{
+		color: darken($honey-teal,10%); 	
+
+		p{
+			span{
+				margin-left:10px;
+			}
+		}
+		
+	}
+}
+
+	.about{
 		width:65%;
 		float:right;
 		text-align:left;
@@ -101,8 +96,121 @@
 
 		p{
 			max-width:100%;
-			font-size: 16px;
-    		line-height: 25px;
+		}
+
+		.expertise{
+			.tags{
+
+				li{
+					text-align:center;
+					display:inline-block;
+					margin: 10px 20px 0 0;
+
+					img{
+						width:65px;
+					}
+
+					h4{
+						margin-top:10px;
+						color:$honey-orange;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.posts{
+	background-color:$honey-grey;
+	width:100%;
+	padding:10px 0;
+	overflow:auto;
+
+	.post-container{
+		max-width:1280px;
+		margin:0 auto;
+
+		.posts-info{
+			display:inline-block;
+			width:100%;
+			padding: 25px 0;
+
+			.title{
+				float:left;
+			}
+
+			.stats{
+				float:right;
+			}
+		}
+
+		.grid{
+			width:100%;
+			padding:0 0 25px 0;
+			text-align:justify;
+			position:relative;
+
+			.grid-item{
+				width: 23%;
+			    margin: 0 0 2%;
+			    position: relative;
+			    vertical-align: top;
+			    background:white;
+			    display:inline-block;
+			    border-radius:10px;
+
+			    span.bar{
+			    	height:3px;
+			    	width:100%;
+			    	background-color:$honey-orange;
+			    	position:absolute;
+			    	top:0;
+			    	display:inline-block;
+			    	border-radius:10px 10px 0 0;
+			    }
+
+			    .post-title{
+			    	padding: 14px 15px 10px;
+			    	display:inline-block;
+			    	width:100%;
+
+			    	p{
+			    		color:$honey-orange;
+			    		float:left;
+			    		font-weight:500;
+			    	}
+
+			    	h4{
+			    		color:rgba($honey-black,.25);
+			    		float:right;
+			    		margin-top:5px;
+			    	}
+			    }
+
+			    .post-img{
+			    	display:inline-block;
+
+			    	img{
+			    		width:100%;
+			    	}
+			    }
+
+			    .caption{
+			    	margin:15px;
+
+			    	p{
+			    		text-align:left;
+			    		font-size:13px;
+			    		line-height:19px;
+			    		font-weight:500px;
+			    	}
+			    }
+
+			    &.filler{
+					height:0;
+				}
+			}
 		}
 	}
 }
