@@ -78,8 +78,8 @@
           </div>
 
 <div class="grid js-masonry"
-  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200 }'>
- 
+  data-masonry-options='{ "itemSelector": ".grid-item", "gutter": ".gutter-sizer", "percentPosition": "true" }'>
+          <div class="gutter-sizer"></div>
           <!-- POST START -->
 
             <div class="grid-item">
@@ -360,11 +360,6 @@
 
           <!-- POST END -->
 
-
-            
-            <div class="grid-item filler"></div>
-            <div class="grid-item filler"></div>
-
           </div>
 
         </div>
@@ -372,7 +367,12 @@
 
     </section>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-
+    <script>
+      $('.grid-item img').on('load', function() {
+        $('.js-masonry').masonry();
+      });
+    </script>
   </body>
 </html>   
