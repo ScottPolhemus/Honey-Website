@@ -1,7 +1,108 @@
 .info{
 	width:100%;
-	padding:100px 0;
+	padding:130px 0 65px;
 	max-width:1125px;
-	background-color:red;
 	display:inline-block;
+
+	span.line{
+		background-color:rgba($honey-black, .25);
+		height:1px;
+		margin:25px auto;
+		display:block;
+	}
+
+	.profile{
+		width:35%;
+		text-align:center;
+		display:inline-block;
+		float:left;
+		padding:0 50px;
+
+		span.line{
+			width:45px;
+		}
+
+		h2{
+			color:$honey-orange;
+			font-size:35px;
+			margin-bottom:10px;
+		}
+
+		a {
+			text-decoration:none;
+			 transition:.5s ease;
+			 color:$honey-teal;
+
+			p{
+				font-size: 16px;
+				font-weight:500;
+				margin-top:15px;
+
+				span{
+					margin-left:5px;
+					 transition:.25s ease;
+				}
+				// position:relative;
+				// display:inline-block;
+
+				// &:after{
+				// 	content: "\f178";
+				// 	display:inline-block;
+				// 	font-size:16px;
+				// 	color:$honey-teal;
+				// 	position: absolute;
+				// 	right:-25px;
+				// 	font-family: 'FontAwesome';
+				// }
+			}
+
+			&:hover{
+				color: darken($honey-teal,10%); 	
+
+				p{
+					span{
+						margin-left:10px;
+					}
+				}
+				
+			}
+		}
+
+		.profile-photo{
+			max-width:215px;
+			background-size:cover;
+			margin:0 auto;
+			height:215px;
+			overflow:hidden;
+
+			.overlay{
+				img{
+					width:215px;
+				}
+			}
+		}
+	}
+
+	.bio{
+		width:65%;
+		float:right;
+		text-align:left;
+		display:inline-block;
+		padding:15px 50px 0;
+
+		span.line{
+			width:100%;
+		}
+
+		h4{
+			color: rgba($honey-black, .5);
+			margin-bottom:10px;
+		}
+
+		p{
+			max-width:100%;
+			font-size: 16px;
+    		line-height: 25px;
+		}
+	}
 }

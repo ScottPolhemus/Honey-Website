@@ -129,3 +129,20 @@ em {
     }
   }
 }
+
+a.alt-button {
+  display:inline-block;
+  float:none;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid $honey-teal;
+  padding: 12px 20px;
+  transition:.5s ease;
+  color:$honey-teal;
+  text-decoration:none;
+
+  &:hover{
+    background: $honey-teal;
+    color:white;
+  }
+}

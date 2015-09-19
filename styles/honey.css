@@ -149,6 +149,21 @@ em {
       .nav-link a.button:hover, header.top-nav ul li a.button:hover {
         background: #01767c; }
 
+a.alt-button {
+  display: inline-block;
+  float: none;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #01A6AF;
+  padding: 12px 20px;
+  -webkit-transition: .5s ease;
+          transition: .5s ease;
+  color: #01A6AF;
+  text-decoration: none; }
+  a.alt-button:hover {
+    background: #01A6AF;
+    color: white; }
+
 header.top-nav {
   position: fixed;
   top: 0;
@@ -605,10 +620,66 @@ footer.bottom {
 
 .info {
   width: 100%;
-  padding: 100px 0;
-  max-width: 1280px;
-  background-color: red;
+  padding: 130px 0 65px;
+  max-width: 1125px;
   display: inline-block; }
+  .info span.line {
+    background-color: rgba(51, 51, 51, 0.25);
+    height: 1px;
+    margin: 25px auto;
+    display: block; }
+  .info .profile {
+    width: 35%;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    padding: 0 50px; }
+    .info .profile span.line {
+      width: 45px; }
+    .info .profile h2 {
+      color: #F69523;
+      font-size: 35px;
+      margin-bottom: 10px; }
+    .info .profile a {
+      text-decoration: none;
+      -webkit-transition: .5s ease;
+              transition: .5s ease;
+      color: #01A6AF; }
+      .info .profile a p {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 15px; }
+        .info .profile a p span {
+          margin-left: 5px;
+          -webkit-transition: .25s ease;
+                  transition: .25s ease; }
+      .info .profile a:hover {
+        color: #01767c; }
+        .info .profile a:hover p span {
+          margin-left: 10px; }
+    .info .profile .profile-photo {
+      max-width: 215px;
+      background-size: cover;
+      margin: 0 auto;
+      height: 215px;
+      overflow: hidden; }
+      .info .profile .profile-photo .overlay img {
+        width: 215px; }
+  .info .bio {
+    width: 65%;
+    float: right;
+    text-align: left;
+    display: inline-block;
+    padding: 15px 50px 0; }
+    .info .bio span.line {
+      width: 100%; }
+    .info .bio h4 {
+      color: rgba(51, 51, 51, 0.5);
+      margin-bottom: 10px; }
+    .info .bio p {
+      max-width: 100%;
+      font-size: 16px;
+      line-height: 25px; }
 
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co
