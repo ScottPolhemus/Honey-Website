@@ -4,7 +4,7 @@
   <head>
     <title>Honey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/honey.css?v=1.0.1">
+    <link rel="stylesheet" href="styles/honey.css?v=1.0.2">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="icon" href="assets/images/favico.ico" type="image/x-icon">
@@ -72,7 +72,8 @@
               <h4><img src="assets/images/profile/verified.svg" alt="verified-post"/> 25 <span>Verified Posts</span></h4>
               <h4>174 <span>Followers</span></h4> </div>
           </div>
-          <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200 }'>
+          <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".grid-item", "gutter": ".gutter-sizer", "percentPosition": "true" }'>
+            <div class="gutter-sizer"></div>
             <!-- POST START -->
             <div class="grid-item"> <span class="bar"></span>
               <div class="post-title">
@@ -206,13 +207,18 @@
               </div>
             </div>
             <!-- POST END -->
-            <div class="grid-item filler"></div>
-            <div class="grid-item filler"></div>
           </div>
         </div>
       </div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+    <script>
+      $('.grid-item img').on('load', function()
+      {
+        $('.js-masonry').masonry();
+      });
+    </script>
   </body>
 
 </html>

@@ -185,10 +185,12 @@ form {
           .posts .post-container .posts-info .stats h4 span {
             opacity: .5; }
     .posts .post-container .grid {
-      width: 100%;
+      width: auto;
+      margin-left: 2%;
       padding: 0 0 25px 0;
-      text-align: justify;
       position: relative; }
+      .posts .post-container .grid .gutter-sizer {
+        width: 2%; }
       .posts .post-container .grid .grid-item {
         width: 23%;
         margin: 0 0 2%;
@@ -197,6 +199,9 @@ form {
         background: white;
         display: inline-block;
         border-radius: 10px; }
+        @media (max-width: 699px) {
+          .posts .post-container .grid .grid-item {
+            width: 48%; } }
         .posts .post-container .grid .grid-item span.bar {
           height: 3px;
           width: 100%;

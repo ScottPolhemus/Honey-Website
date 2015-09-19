@@ -204,10 +204,15 @@ a {
 		}
 
 		.grid{
-			width:100%;
+			width:auto;
+			margin-left: 2%;
 			padding:0 0 25px 0;
-			text-align:justify;
+			// text-align:justify;
 			position:relative;
+
+			.gutter-sizer {
+				width: 2%;
+			}
 
 			.grid-item{
 				width: 23%;
@@ -217,6 +222,10 @@ a {
 			    background:white;
 			    display:inline-block;
 			    border-radius:10px;
+
+			    @media (max-width: $break-md - 1) {
+			    	width: (100% / 2) - 2%;
+			    }
 
 			    span.bar{
 			    	height:3px;

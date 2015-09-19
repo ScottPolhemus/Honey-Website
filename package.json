@@ -1,6 +1,6 @@
 {
   "name": "honey",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Scott Polhemus <scott@polhem.us>",
   "devDependencies": {
     "assemble": "^0.6.0-beta.5",
