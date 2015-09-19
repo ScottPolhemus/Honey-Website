@@ -5,6 +5,10 @@ header.top-nav{
   right: 0;
   z-index: 1000;
 
+  form button{
+    font-size:15px;
+  }
+
   &:before {
     content: '';
     position: absolute;
