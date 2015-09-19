@@ -52,16 +52,18 @@ table {
   font-size: 16px;
   line-height: 25px; }
 
+.profile-page span.line {
+  background-color: rgba(51, 51, 51, 0.2);
+  height: 1px;
+  margin: 25px auto;
+  display: block;
+  width: 100%; }
+
 .info {
   width: 100%;
   padding: 130px 0 65px;
   max-width: 1125px;
   display: inline-block; }
-  .info span.line {
-    background-color: rgba(51, 51, 51, 0.25);
-    height: 1px;
-    margin: 25px auto;
-    display: block; }
   .info .profile {
     width: 35%;
     text-align: center;
@@ -105,8 +107,6 @@ table {
     text-align: left;
     display: inline-block;
     padding: 15px 50px 0; }
-    .info .about span.line {
-      width: 100%; }
     .info .about h4 {
       color: rgba(51, 51, 51, 0.5);
       margin-bottom: 10px; }
@@ -127,6 +127,8 @@ table {
   width: 100%;
   padding: 10px 0;
   overflow: auto; }
+  .posts span.line {
+    margin-bottom: 5px; }
   .posts .post-container {
     max-width: 1280px;
     margin: 0 auto; }
@@ -138,6 +140,14 @@ table {
         float: left; }
       .posts .post-container .posts-info .stats {
         float: right; }
+        .posts .post-container .posts-info .stats h4 {
+          display: inline-block;
+          margin-left: 15px; }
+          .posts .post-container .posts-info .stats h4 img {
+            width: 14px;
+            vertical-align: middle; }
+          .posts .post-container .posts-info .stats h4 span {
+            opacity: .5; }
     .posts .post-container .grid {
       width: 100%;
       padding: 0 0 25px 0;
@@ -181,7 +191,20 @@ table {
             text-align: left;
             font-size: 13px;
             line-height: 19px;
-            font-weight: 500px; }
+            font-weight: 500;
+            color: rgba(51, 51, 51, 0.75); }
+          .posts .post-container .grid .grid-item .caption.comments p {
+            color: #01A6AF;
+            display: inline-block;
+            margin-right: 5px; }
+        .posts .post-container .grid .grid-item .post-tags {
+          margin: 0 15px 15px; }
+          .posts .post-container .grid .grid-item .post-tags li {
+            text-align: center;
+            display: inline-block;
+            margin: 0 5px 5px 0; }
+            .posts .post-container .grid .grid-item .post-tags li img {
+              width: 30px; }
         .posts .post-container .grid .grid-item.filler {
           height: 0; }
 

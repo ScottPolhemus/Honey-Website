@@ -3,6 +3,14 @@
 		font-size: 16px;
     	line-height: 25px;
 	}
+
+	span.line{
+		background-color:rgba($honey-black, .2);
+		height:1px;
+		margin:25px auto;
+		display:block;
+		width:100%;
+	}
 }
 
 .info{
@@ -10,13 +18,6 @@
 	padding:130px 0 65px;
 	max-width:1125px;
 	display:inline-block;
-
-	span.line{
-		background-color:rgba($honey-black, .25);
-		height:1px;
-		margin:25px auto;
-		display:block;
-	}
 
 	.profile{
 		width:35%;
@@ -85,10 +86,6 @@ a {
 		display:inline-block;
 		padding:15px 50px 0;
 
-		span.line{
-			width:100%;
-		}
-
 		h4{
 			color: rgba($honey-black, .5);
 			margin-bottom:10px;
@@ -127,6 +124,10 @@ a {
 	padding:10px 0;
 	overflow:auto;
 
+	span.line{
+		margin-bottom:5px;
+	}
+
 	.post-container{
 		max-width:1280px;
 		margin:0 auto;
@@ -142,6 +143,20 @@ a {
 
 			.stats{
 				float:right;
+
+				h4{
+					display:inline-block;
+					margin-left:15px;
+
+					img{
+						width:14px;
+						vertical-align:middle;
+					}
+
+					span{
+						opacity:.5;
+					}
+				}
 			}
 		}
 
@@ -203,9 +218,32 @@ a {
 			    		text-align:left;
 			    		font-size:13px;
 			    		line-height:19px;
-			    		font-weight:500px;
+			    		font-weight:500;
+			    		color:rgba($honey-black, .75);
+			    	}
+
+			    	&.comments{
+			    		p{
+			    			color:$honey-teal;
+			    			display:inline-block;
+			    			margin-right:5px;
+			    		}
 			    	}
 			    }
+
+			    .post-tags{
+			    	margin:0 15px 15px;
+			    	li{
+						text-align:center;
+						display:inline-block;
+						margin: 0 5px 5px 0;
+
+						img{
+							width:30px;
+						}
+				    }
+				}
+
 
 			    &.filler{
 					height:0;
