@@ -1,3 +1,46 @@
+form{
+	width: 225px;
+	position:relative;
+
+	input {
+		background-color:inherit;
+		border: none;
+		font-size:16px;
+		font-weight:300;
+		vertical-align:middle;
+		width:100%;
+		background-color : $honey-grey;
+		border: 1px solid rgba($honey-black,.2);
+		color: $honey-teal;
+		border-radius: 10px;
+		padding: 7px 15px;
+		height:42px;
+		transition:.5s ease;
+
+		&:focus{
+			background-color:white;
+			border-color:rgba($honey-black,.5);
+		}
+	}
+
+	button{
+		background-color : inherit;
+		border: 0 none;
+		cursor: pointer;
+		float:right;
+		position:absolute;
+		top:10px;
+		right:12px;
+		color:rgba($honey-black,.5);
+		transition:.25s ease;
+		z-index:100;
+
+		&:hover{					
+			color:rgba($honey-black,1);
+		}
+	}
+}
+
 .profile-page{
 	p{
 		font-size: 16px;

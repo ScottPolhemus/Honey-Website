@@ -92,7 +92,7 @@ section.intro-section {
     background: $honey-orange;
     border-radius: 10px;
     padding: 20px 25px 22px;
-    // cursor:pointer;
+    cursor:pointer;
     transition:.25s ease;
 
     color:white;
@@ -101,10 +101,10 @@ section.intro-section {
     font-weight:500;
 
     &:hover{
-      // background:darken($honey-orange, 5%);
-      // padding: 20px 30px 22px;
+      background:darken($honey-orange, 5%);
+      padding: 20px 30px 22px;
       // transform: translateY(-10px);
-      // box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
     }
 
     img{
@@ -421,7 +421,7 @@ footer.bottom {
     margin:25px auto 50px;
 
     &.copyright{
-      opacity:.5;
+      opacity:.65;
       margin: 15px auto 0;
     }
   }
@@ -514,5 +514,5 @@ footer.bottom {
 
 .bg-orange {
   background: $honey-orange;
-  background: linear-gradient(to right, #FDB73B, #F59121);
+  background: linear-gradient(to top, #FDB73B, #F59121);
 }
