@@ -603,6 +603,13 @@ footer.bottom {
   background: -webkit-linear-gradient(left, #FDB73B, #F59121);
   background: linear-gradient(to right, #FDB73B, #F59121); }
 
+.info {
+  width: 100%;
+  padding: 100px 0;
+  max-width: 1280px;
+  background-color: red;
+  display: inline-block; }
+
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */
