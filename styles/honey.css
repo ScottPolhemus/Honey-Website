@@ -116,15 +116,17 @@ form {
       max-width: 215px;
       background-size: cover;
       margin: 0 auto;
-      height: 215px;
+      height: 100%;
       overflow: hidden; }
       .info .profile .profile-photo .overlay img {
-        width: 215px; }
+        width: 100%;
+        vertical-align: middle; }
   .info a {
     text-decoration: none;
     -webkit-transition: .5s ease;
             transition: .5s ease;
-    color: #01A6AF; }
+    color: #01A6AF;
+    display: inline-block; }
     .info a p {
       font-size: 16px;
       font-weight: 500;
@@ -166,12 +168,14 @@ form {
   .posts span.line {
     margin-bottom: 5px; }
   .posts .post-container {
-    max-width: 1280px;
+    max-width: 1300px;
     margin: 0 auto; }
+    .posts .post-container .load {
+      padding: 0 0 50px; }
     .posts .post-container .posts-info {
       display: inline-block;
       width: 100%;
-      padding: 25px 0; }
+      padding: 25px 2%; }
       .posts .post-container .posts-info .title {
         float: left; }
       .posts .post-container .posts-info .stats {
@@ -192,13 +196,15 @@ form {
       .posts .post-container .grid .gutter-sizer {
         width: 2%; }
       .posts .post-container .grid .grid-item {
+        float: left;
         width: 23%;
         margin: 0 0 2%;
         position: relative;
         vertical-align: top;
         background: white;
         display: inline-block;
-        border-radius: 10px; }
+        border-radius: 10px;
+        text-align: left; }
         @media (max-width: 699px) {
           .posts .post-container .grid .grid-item {
             width: 48%; } }
@@ -229,7 +235,6 @@ form {
         .posts .post-container .grid .grid-item .caption {
           margin: 15px; }
           .posts .post-container .grid .grid-item .caption p {
-            text-align: left;
             font-size: 13px;
             line-height: 19px;
             font-weight: 500;
@@ -246,8 +251,6 @@ form {
             margin: 0 5px 5px 0; }
             .posts .post-container .grid .grid-item .post-tags li img {
               width: 30px; }
-        .posts .post-container .grid .grid-item.filler {
-          height: 0; }
 
 html, form input {
   font-family: 'Open Sans', sans-serif;
@@ -353,7 +356,6 @@ em {
 a.alt-button {
   display: inline-block;
   float: none;
-  background: white;
   border-radius: 10px;
   border: 1px solid #01A6AF;
   padding: 12px 20px;
@@ -825,6 +827,61 @@ footer.bottom {
   background: #F69523;
   background: -webkit-linear-gradient(bottom, #FDB73B, #F59121);
   background: linear-gradient(to top, #FDB73B, #F59121); }
+
+.newsletter {
+  margin: 40px auto; }
+  .newsletter h3 {
+    color: white;
+    line-height: 25px; }
+  .newsletter form {
+    width: 90%;
+    margin: 0 auto; }
+  .newsletter #mc_embed_signup {
+    font-family: "franklin-gothic-urw-cond",sans-serif;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto; }
+    .newsletter #mc_embed_signup ::-webkit-input-placeholder {
+      color: rgba(51, 51, 51, 0.5); }
+    .newsletter #mc_embed_signup :-moz-placeholder {
+      /* Firefox 18- */
+      color: rgba(51, 51, 51, 0.5); }
+    .newsletter #mc_embed_signup ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: rgba(51, 51, 51, 0.5); }
+    .newsletter #mc_embed_signup :-ms-input-placeholder {
+      color: rgba(51, 51, 51, 0.5); }
+    .newsletter #mc_embed_signup input {
+      background-color: white;
+      border: 1px solid white;
+      color: #333333; }
+      .newsletter #mc_embed_signup input:focus {
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.15); }
+      .newsletter #mc_embed_signup input.button {
+        color: #01A6AF;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        font-family: 'FontAwesome';
+        background-color: transparent;
+        clear: both;
+        border: 0 none;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        height: 17px;
+        min-width: 10px;
+        width: 30px;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: top;
+        white-space: nowrap;
+        margin: 0 auto;
+        padding: 0 8px; }
+        .newsletter #mc_embed_signup input.button:hover {
+          color: rgba(1, 166, 175, 0.5); }
 
 /*! Flickity v1.0.2
 http://flickity.metafizzy.co

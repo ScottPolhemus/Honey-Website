@@ -83,12 +83,13 @@ form{
 			max-width:215px;
 			background-size:cover;
 			margin:0 auto;
-			height:215px;
+			height:100%;
 			overflow:hidden;
 
 			.overlay{
 				img{
-					width:215px;
+					width: 100%;
+    				vertical-align: middle;
 				}
 			}
 		}
@@ -98,6 +99,7 @@ a {
 	text-decoration:none;
 	 transition:.5s ease;
 	 color:$honey-teal;
+	 display:inline-block;
 
 	p{
 		font-size: 16px;
@@ -172,13 +174,17 @@ a {
 	}
 
 	.post-container{
-		max-width:1280px;
+		max-width:1300px;
 		margin:0 auto;
+
+		.load{
+			padding:0 0 50px;
+		}
 
 		.posts-info{
 			display:inline-block;
 			width:100%;
-			padding: 25px 0;
+			padding: 25px 2%;
 
 			.title{
 				float:left;
@@ -215,6 +221,7 @@ a {
 			}
 
 			.grid-item{
+				float:left;
 				width: 23%;
 			    margin: 0 0 2%;
 			    position: relative;
@@ -222,6 +229,7 @@ a {
 			    background:white;
 			    display:inline-block;
 			    border-radius:10px;
+			    text-align:left;
 
 			    @media (max-width: $break-md - 1) {
 			    	width: (100% / 2) - 2%;
@@ -267,7 +275,6 @@ a {
 			    	margin:15px;
 
 			    	p{
-			    		text-align:left;
 			    		font-size:13px;
 			    		line-height:19px;
 			    		font-weight:500;
@@ -297,9 +304,9 @@ a {
 				}
 
 
-			    &.filler{
-					height:0;
-				}
+			 //    &.filler{
+				// 	height:0;
+				// }
 			}
 		}
 	}
