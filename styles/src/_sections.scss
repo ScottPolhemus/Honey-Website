@@ -516,3 +516,96 @@ footer.bottom {
   background: $honey-orange;
   background: linear-gradient(to top, #FDB73B, #F59121);
 }
+
+
+.newsletter{
+   margin: 40px auto;
+
+  h3{
+    color:white;
+    line-height:25px;
+  }
+
+  form{
+    width:90%;
+    margin:0 auto;
+  }
+
+  #mc_embed_signup{
+    font-family: "franklin-gothic-urw-cond",sans-serif;
+    position:relative;
+    max-width:300px;
+    margin:0 auto;
+
+    ::-webkit-input-placeholder {
+       color: rgba($honey-black,.5);
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: rgba($honey-black,.5);  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: rgba($honey-black,.5);  
+    }
+
+    :-ms-input-placeholder {  
+       color: rgba($honey-black,.5);  
+    }
+
+    // input:-webkit-autofill {
+    //     -webkit-box-shadow: 0 0 0px 1000px $honey-orange inset;
+    // }
+
+    // -webkit-text-fill-color: white !important;
+
+    input {
+      // background-color:inherit;
+      // border: none;
+      // font-size:16px;
+      // font-weight:300;
+      // vertical-align:middle;
+      // width:100%;
+      background-color: white;
+      border: 1px solid white;
+      color: $honey-black;
+      // border-radius: 10px;
+      // padding: 7px 15px;
+      // height:42px;
+      // transition:.5s ease;
+
+      &:focus{
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+      }
+
+      &.button {
+          color: $honey-teal;
+          position: absolute;
+          right: 10px;
+          top: 13px;
+          font-family: 'FontAwesome';
+          background-color: transparent;
+          clear: both;
+          border: 0 none;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 18px;
+          font-weight: bold;
+          height: 17px;
+          min-width: 10px;
+          width: 30px;
+          line-height: 1;
+          text-align: center;
+          text-decoration: none;
+          vertical-align: top;
+          white-space: nowrap;
+          margin: 0 auto;
+          padding: 0 8px;
+
+        &:hover{
+          color:rgba($honey-teal,.5);
+        }
+      }
+    }
+  }
+}
